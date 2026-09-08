@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE task PUBLIC "-//OASIS//DTD DITA Task//EN" "task.dtd">
+<task id="auditx_create_site">
+  <title>Create a Site in AuditX</title>
+  <shortdesc>A site represents a physical location (warehouse, fulfillment center, or distribution point) where AuditX devices are deployed. Create a site to specify your operational location details in the AuditX system.</shortdesc>
+  
+  <taskbody>
+    <prereq>
+      <ul>
+        <li>You must have Admin or Custom User role</li>
+        <li>You must be logged into the AuditX Forge portal</li>
+        <li>Your password has been successfully reset</li>
+        <li>You have information about your physical location (site name, type, address)</li>
+      </ul>
+    </prereq>
+
+    <context>
+      <p>Site creation is the first step in system initialization. Each site represents a distinct operational location and helps organize devices, users, event data, and reports by physical warehouse or fulfillment area.</p>
+      <note type="important">Organizations with multiple warehouses should create separate sites for each location to maintain clear operational segregation.</note>
+    </context>
+
+    <steps>
+      <step>
+        <cmd>Open the AuditX Forge portal in your web browser</cmd>
+        <info>Navigate to the Forge login page and log in with your credentials.</info>
+      </step>
+
+      <step>
+        <cmd>Locate the "Site" tab in the left-hand navigation menu</cmd>
+        <info>The Site menu is typically found in the main navigation panel on the left side of the dashboard.</info>
+      </step>
+
+      <step>
+        <cmd>Click the "Add Site" button on the right side of the screen</cmd>
+        <info>A site creation form will appear on the screen.</info>
+      </step>
+
+      <step>
+        <cmd>Enter the site name in the "Site Name" field</cmd>
+        <substeps>
+          <substep>
+            <cmd>Use a descriptive name that identifies the location</cmd>
+            <info>
+              <ul>
+                <li>Example: "Main Warehouse NYC"</li>
+                <li>Example: "LA Distribution Center"</li>
+                <li>Example: "Chicago Fulfillment Center"</li>
+              </ul>
+            </info>
+          </substep>
+        </substeps>
+      </step>
+
+      <step>
+        <cmd>Select the "Site Type" from the dropdown menu</cmd>
+        <info>
+          <ul>
+            <li>Select the category that best represents your operational location</li>
+            <li>Common site types include: Warehouse, Fulfillment Center, Distribution Hub, Return Center</li>
+          </ul>
+        </info>
+      </step>
+
+      <step>
+        <cmd>Fill in additional site details as required by the form</cmd>
+        <substeps>
+          <substep>
+            <cmd>Enter physical location information (address, city, state, postal code)</cmd>
+          </substep>
+          <substep>
+            <cmd>Add contact information if applicable</cmd>
+          </substep>
+          <substep>
+            <cmd>Include any site-specific configuration notes</cmd>
+          </substep>
+        </substeps>
+      </step>
+
+      <step>
+        <cmd>Review all entered information for accuracy</cmd>
+        <info>Double-check the site name, type, and location details before proceeding.</info>
+      </step>
+
+      <step>
+        <cmd>Click the "Save" button at the bottom of the form</cmd>
+        <info>The system will validate your entries and create the site.</info>
+      </step>
+    </steps>
+
+    <result>
+      <p>Your site has been successfully created in the AuditX system. The site now appears in your Sites list and is available for assignment to hardware devices.</p>
+    </result>
+
+    <postreq>
+      <ul>
+        <li>Next step: Assign the site to an AuditX device (Assign Site to a System)</li>
+        <li>Create user accounts with appropriate access levels for this site</li>
+        <li>Assign users to the site for operational access</li>
+      </ul>
+    </postreq>
+
+    <example>
+      <title>Site Creation Example</title>
+      <simpletable>
+        <sthead>
+          <stentry>Field</stentry>
+          <stentry>Example Value</stentry>
+        </sthead>
+        <strow>
+          <stentry>Site Name</stentry>
+          <stentry>NY Warehouse Zone A</stentry>
+        </strow>
+        <strow>
+          <stentry>Site Type</stentry>
+          <stentry>Fulfillment Center</stentry>
+        </strow>
+        <strow>
+          <stentry>Address</stentry>
+          <stentry>123 Commerce Ave, New York, NY 10001</stentry>
+        </strow>
+        <strow>
+          <stentry>Contact Email</stentry>
+          <stentry>manager@warehouse.com</stentry>
+        </strow>
+      </simpletable>
+    </example>
+
+    <section id="site_types">
+      <title>Site Type Reference</title>
+      <dl>
+        <dlentry>
+          <dt>Warehouse</dt>
+          <dd>Large-scale storage and distribution facility for inventory management</dd>
+        </dlentry>
+        <dlentry>
+          <dt>Fulfillment Center</dt>
+          <dd>Specialized facility focused on order picking, packing, and shipping</dd>
+        </dlentry>
+        <dlentry>
+          <dt>Distribution Hub</dt>
+          <dd>Regional distribution point for multi-site operations</dd>
+        </dlentry>
+        <dlentry>
+          <dt>Return Center</dt>
+          <dd>Facility dedicated to processing returned items and quality verification</dd>
+        </dlentry>
+      </dl>
+    </section>
+
+  </taskbody>
+</task>

@@ -1,0 +1,208 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE concept PUBLIC "-//OASIS//DTD DITA Concept//EN" "concept.dtd">
+<concept id="auditx_workflows_overview">
+  <title>AuditX Workflows Overview</title>
+  <shortdesc>AuditX supports three primary workflow types that enable organizations to capture, verify, and document packing operations in real time. Each workflow is designed for specific operational requirements and can be customized to match your business processes.</shortdesc>
+  
+  <conbody>
+    <section>
+      <title>Workflow Purpose and Benefits</title>
+      <p>Workflows are the core operational mechanism in AuditX. They define how your packing operations are recorded, verified, and linked to order data. Each workflow:</p>
+      <ul>
+        <li>Links visual evidence (video or images) directly to order IDs</li>
+        <li>Validates scanned items against original order specifications</li>
+        <li>Captures metadata (timestamps, barcodes, system names)</li>
+        <li>Provides audit trails and compliance documentation</li>
+        <li>Integrates with eCommerce platforms and external systems via webhooks</li>
+      </ul>
+    </section>
+
+    <section>
+      <title>The Three AuditX Workflows</title>
+      
+      <fig>
+        <title>AuditX Workflow Comparison</title>
+        <table>
+          <tgroup cols="4">
+            <colspec colname="c1" colwidth="20%"/>
+            <colspec colname="c2" colwidth="27%"/>
+            <colspec colname="c3" colwidth="27%"/>
+            <colspec colname="c4" colwidth="26%"/>
+            <thead>
+              <row>
+                <entry>Aspect</entry>
+                <entry>Order Verification</entry>
+                <entry>Video Recording</entry>
+                <entry>Image Logging</entry>
+              </row>
+            </thead>
+            <tbody>
+              <row>
+                <entry><b>Primary Purpose</b></entry>
+                <entry>Validate each scanned item matches order specifications</entry>
+                <entry>Record complete packing process video</entry>
+                <entry>Capture still images at scan points</entry>
+              </row>
+              <row>
+                <entry><b>Output Type</b></entry>
+                <entry>Video + Verification Report</entry>
+                <entry>Video File</entry>
+                <entry>Image Sequence</entry>
+              </row>
+              <row>
+                <entry><b>Best Use Case</b></entry>
+                <entry>eCommerce order fulfillment with Shopify/WMS integration</entry>
+                <entry>Comprehensive process documentation and dispute resolution</entry>
+                <entry>Quick verification and lightweight storage requirement</entry>
+              </row>
+              <row>
+                <entry><b>Storage Requirement</b></entry>
+                <entry>Moderate (video + metadata)</entry>
+                <entry>High (full video file)</entry>
+                <entry>Low (compressed images)</entry>
+              </row>
+              <row>
+                <entry><b>Processing Time</b></entry>
+                <entry>Real-time verification</entry>
+                <entry>Post-event processing</entry>
+                <entry>Real-time capture</entry>
+              </row>
+            </tbody>
+          </tgroup>
+        </table>
+      </fig>
+
+      <section>
+        <title>1. Order Verification Workflow</title>
+        <p>The Order Verification Workflow is designed for eCommerce fulfillment operations that require validation of scanned items against order data.</p>
+        <ul>
+          <li><b>What it does:</b> Automatically validates each scanned barcode against the order specifications from Shopify or other eCommerce platforms</li>
+          <li><b>Records:</b> Video of packing process linked to verification data</li>
+          <li><b>Best for:</b> High-volume eCommerce operations requiring integration with order management systems</li>
+          <li><b>Key features:</b> Barcode validation, order reconciliation, real-time discrepancy alerts</li>
+          <li><b>Learn more:</b> See "Create an Order Verification Workflow"</li>
+        </ul>
+      </section>
+
+      <section>
+        <title>2. Video Recording Workflow</title>
+        <p>The Video Recording Workflow captures the entire packing process in full motion video format for comprehensive documentation.</p>
+        <ul>
+          <li><b>What it does:</b> Records continuous video of packing operations and links the video file to the order or barcode ID</li>
+          <li><b>Records:</b> Complete video file with metadata overlay (timestamps, barcodes, event IDs)</li>
+          <li><b>Best for:</b> Organizations requiring detailed visual proof of packing quality and handling procedures</li>
+          <li><b>Key features:</b> Configurable resolution (4K or 1080p), compression options, automatic event segmentation</li>
+          <li><b>Learn more:</b> See "Create a Video Recording Workflow"</li>
+        </ul>
+      </section>
+
+      <section>
+        <title>3. Image Logging Workflow</title>
+        <p>The Image Logging Workflow captures high-resolution still images at predetermined intervals or scan points during packing.</p>
+        <ul>
+          <li><b>What it does:</b> Takes snapshots at each barcode scan and links images to order IDs in near-real-time</li>
+          <li><b>Records:</b> Sequential images with optional annotations and metadata</li>
+          <li><b>Best for:</b> Operations needing quick verification with minimal storage requirements</li>
+          <li><b>Key features:</b> Automatic image capture on scan, configurable capture delay, lightweight file format</li>
+          <li><b>Learn more:</b> See "Create an Image Logging Workflow"</li>
+        </ul>
+      </section>
+
+    </section>
+
+    <section>
+      <title>Common Workflow Features</title>
+      <p>All AuditX workflows share these core capabilities:</p>
+      <dl>
+        <dlentry>
+          <dt>Barcode Configuration</dt>
+          <dd>Define barcode field names, length ranges, and classification rules using regular expressions</dd>
+        </dlentry>
+        <dlentry>
+          <dt>Static Annotations</dt>
+          <dd>Automatically overlay event ID, barcode, timestamp, and system name on recordings</dd>
+        </dlentry>
+        <dlentry>
+          <dt>Dynamic Annotations</dt>
+          <dd>Show sub-event indicators (individual SKU scans) and weight data during video playback</dd>
+        </dlentry>
+        <dlentry>
+          <dt>Compression Options</dt>
+          <dd>Choose between Standard (broader compatibility) and Advanced (higher compression)</dd>
+        </dlentry>
+        <dlentry>
+          <dt>Webhook Integration</dt>
+          <dd>Send event data to Shopify, WMS systems, or custom external applications</dd>
+        </dlentry>
+        <dlentry>
+          <dt>Credit Exhaust Handling</dt>
+          <dd>Choose to stop recording or overwrite older events when storage quota is reached</dd>
+        </dlentry>
+      </dl>
+    </section>
+
+    <section>
+      <title>Workflow Configuration Process</title>
+      <p>Creating any workflow in AuditX follows a consistent process:</p>
+      <ol>
+        <li><b>Basic Information:</b> Name the workflow and assign it to a site</li>
+        <li><b>Workflow Type:</b> Select Order Verification, Video Recording, or Image Logging</li>
+        <li><b>Barcode Configuration:</b> Define barcode parameters and classification rules</li>
+        <li><b>Integration Setup:</b> Configure Shopify or external API connections (if applicable)</li>
+        <li><b>Event Configuration:</b> Choose annotation options and overlay settings</li>
+        <li><b>Camera/Media Settings:</b> Set recording duration and resolution</li>
+        <li><b>Credit Management:</b> Define behavior when storage quota is exhausted</li>
+        <li><b>Review and Save:</b> Verify all settings and activate the workflow</li>
+      </ol>
+    </section>
+
+    <section>
+      <title>Workflow Selection Guide</title>
+      <p>Use this table to determine which workflow best fits your operational needs:</p>
+      <simpletable>
+        <sthead>
+          <stentry>Operational Need</stentry>
+          <stentry>Recommended Workflow</stentry>
+          <stentry>Reason</stentry>
+        </sthead>
+        <strow>
+          <stentry>Validate items against Shopify orders</stentry>
+          <stentry>Order Verification</stentry>
+          <stentry>Provides direct integration and real-time validation</stentry>
+        </strow>
+        <strow>
+          <stentry>Dispute resolution and quality review</stentry>
+          <stentry>Video Recording</stentry>
+          <stentry>Full video documentation supports all investigation needs</stentry>
+        </strow>
+        <strow>
+          <stentry>Quick verification, minimal storage</stentry>
+          <stentry>Image Logging</stentry>
+          <stentry>Still images reduce storage and processing requirements</stentry>
+        </strow>
+        <strow>
+          <stentry>Compliance audit trail required</stentry>
+          <stentry>Order Verification or Video Recording</stentry>
+          <stentry>Both provide timestamped, annotated evidence</stentry>
+        </strow>
+        <strow>
+          <stentry>Multi-SKU packing with event segmentation</stentry>
+          <stentry>Video Recording</stentry>
+          <stentry>Automatic segmentation on barcode scan</stentry>
+        </strow>
+      </simpletable>
+    </section>
+
+    <section>
+      <title>Event URL Reports</title>
+      <p>Before creating any workflow, you should enable the Event URL Report feature in Settings. This generates shareable URLs for each event recording, enabling stakeholders to access videos or images without logging into AuditX directly.</p>
+      <ul>
+        <li>Navigate to Settings and enable Event URL Report</li>
+        <li>Validate with OTP when prompted</li>
+        <li>Event URLs are automatically generated when events are recorded</li>
+        <li>URLs can be shared with Shopify orders, sent via webhooks, or included in reports</li>
+      </ul>
+    </section>
+
+  </conbody>
+</concept>

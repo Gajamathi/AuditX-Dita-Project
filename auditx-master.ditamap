@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE map PUBLIC "-//OASIS//DTD DITA Map//EN" "map.dtd">
+<map id="auditx_master_map">
+  <title>AuditX Complete Product Documentation</title>
+  <shortdesc>Master map containing all AuditX documentation topics organized by information type. Use audience-specific submaps for targeted deliverables.</shortdesc>
+
+  <!-- FRONT MATTER -->
+  <frontmatter>
+    <booklists>
+      <toc/>
+      <figurelist/>
+      <tablelist/>
+    </booklists>
+  </frontmatter>
+
+  <!-- FOUNDATIONAL CONCEPTS -->
+  <topicref href="auditx-product-overview.dita" type="concept">
+    <topicmeta>
+      <audience type="administrator"/>
+      <audience type="supervisor"/>
+      <audience type="custom-user"/>
+    </topicmeta>
+  </topicref>
+
+  <topicref href="auditx-user-roles.dita" type="reference">
+    <topicmeta>
+      <audience type="administrator"/>
+      <audience type="custom-user"/>
+    </topicmeta>
+  </topicref>
+
+  <topicref href="auditx-workflows-overview.dita" type="concept">
+    <topicmeta>
+      <audience type="administrator"/>
+      <audience type="supervisor"/>
+      <audience type="custom-user"/>
+    </topicmeta>
+  </topicref>
+
+  <!-- GETTING STARTED TASKS -->
+  <topicgroup>
+    <title>Getting Started with AuditX</title>
+    
+    <topicref href="auditx-reset-password.dita" type="task">
+      <topicmeta>
+        <audience type="all-users"/>
+      </topicmeta>
+    </topicref>
+
+    <topicref href="auditx-create-site.dita" type="task">
+      <topicmeta>
+        <audience type="administrator"/>
+        <audience type="custom-user"/>
+      </topicmeta>
+    </topicref>
+
+    <topicref href="auditx-create-users.dita" type="task">
+      <topicmeta>
+        <audience type="administrator"/>
+      </topicmeta>
+    </topicref>
+
+  </topicgroup>
+
+  <!-- WORKFLOW CONFIGURATION -->
+  <topicgroup>
+    <title>Workflow Configuration</title>
+
+    <topicref href="auditx-create-order-verification-workflow.dita" type="task">
+      <topicmeta>
+        <audience type="administrator"/>
+        <audience type="custom-user"/>
+      </topicmeta>
+    </topicref>
+
+    <!-- Placeholder for Video Recording Workflow -->
+    <!-- <topicref href="auditx-create-video-recording-workflow.dita" type="task"/> -->
+
+    <!-- Placeholder for Image Logging Workflow -->
+    <!-- <topicref href="auditx-create-image-logging-workflow.dita" type="task"/> -->
+
+  </topicgroup>
+
+  <!-- REPORTING AND ANALYTICS -->
+  <topicref href="auditx-reports-reference.dita" type="reference">
+    <topicmeta>
+      <audience type="administrator"/>
+      <audience type="supervisor"/>
+      <audience type="custom-user"/>
+    </topicmeta>
+  </topicref>
+
+  <!-- BACK MATTER -->
+  <backmatter>
+    <topicref href="auditx-glossary.dita" type="reference" processing-role="resource-only"/>
+    <topicref href="auditx-troubleshooting.dita" type="reference"/>
+  </backmatter>
+
+</map>

@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE map PUBLIC "-//OASIS//DTD DITA Map//EN" "map.dtd">
+<map id="auditx_supervisor_guide">
+  <title>AuditX Supervisor Guide</title>
+  <shortdesc>Guide for supervisors and operations managers who need to monitor packing operations, access reports, and review event data. Supervisors have read-only access to dashboards and reports.</shortdesc>
+
+  <topicmeta>
+    <prodinfo>
+      <prodname>AuditX</prodname>
+      <vrmlist>
+        <vrm version="1.0"/>
+      </vrmlist>
+    </prodinfo>
+    <audience type="supervisor"/>
+  </topicmeta>
+
+  <frontmatter>
+    <booklists>
+      <toc/>
+      <figurelist/>
+      <tablelist/>
+    </booklists>
+  </frontmatter>
+
+  <!-- PART 1: INTRODUCTION -->
+  <topicgroup>
+    <title>Welcome to AuditX</title>
+
+    <topicref href="auditx-product-overview.dita" type="concept">
+      <topicmeta>
+        <audience type="supervisor"/>
+      </topicmeta>
+    </topicref>
+
+    <topicref href="auditx-reset-password.dita" type="task"/>
+
+  </topicgroup>
+
+  <!-- PART 2: UNDERSTANDING YOUR ROLE -->
+  <topicgroup>
+    <title>Understanding the Supervisor Role</title>
+
+    <topicref href="auditx-user-roles.dita" type="reference">
+      <topicmeta>
+        <audience type="supervisor"/>
+      </topicmeta>
+    </topicref>
+
+  </topicgroup>
+
+  <!-- PART 3: WORKFLOWS OVERVIEW -->
+  <topicgroup>
+    <title>Understanding Workflows</title>
+    <topicmeta>
+      <audience type="supervisor"/>
+    </topicmeta>
+
+    <topicref href="auditx-workflows-overview.dita" type="concept">
+      <topicmeta>
+        <audience type="supervisor"/>
+      </topicmeta>
+    </topicref>
+
+  </topicgroup>
+
+  <!-- PART 4: REPORTING AND MONITORING -->
+  <topicgroup>
+    <title>Monitoring Operations and Accessing Reports</title>
+    <topicmeta>
+      <audience type="supervisor"/>
+    </topicmeta>
+
+    <topicref href="auditx-reports-reference.dita" type="reference">
+      <topicmeta>
+        <audience type="supervisor"/>
+        <data name="feature" value="reporting"/>
+      </topicmeta>
+    </topicref>
+
+  </topicgroup>
+
+  <!-- BACK MATTER -->
+  <backmatter>
+    <topicref href="auditx-glossary.dita" type="reference" processing-role="resource-only"/>
+    <topicref href="auditx-troubleshooting.dita" type="reference">
+      <topicmeta>
+        <audience type="supervisor"/>
+      </topicmeta>
+    </topicref>
+  </backmatter>
+
+</map>

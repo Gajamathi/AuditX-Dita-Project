@@ -1,0 +1,259 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE reference PUBLIC "-//OASIS//DTD DITA Reference//EN" "reference.dtd">
+<reference id="auditx_reports_reference">
+  <title>AuditX Reports Structure and Data</title>
+  <shortdesc>The Reports section in AuditX provides a complete log of all recorded events, including barcodes scanned, video recordings, and sub-event images. Reports can be searched, filtered, and exported for analysis, audits, and dispute resolution.</shortdesc>
+  
+  <refbody>
+    <section>
+      <title>Report Data Fields</title>
+      <p>Each event in the AuditX Reports table contains the following information:</p>
+    </section>
+
+    <table>
+      <title>AuditX Event Report Fields</title>
+      <tgroup cols="3">
+        <colspec colname="field" colwidth="20%"/>
+        <colspec colname="description" colwidth="50%"/>
+        <colspec colname="data_type" colwidth="30%"/>
+        <thead>
+          <row>
+            <entry>Field Name</entry>
+            <entry>Description</entry>
+            <entry>Data Type</entry>
+          </row>
+        </thead>
+        <tbody>
+          <row>
+            <entry>
+              <b>Barcode</b>
+            </entry>
+            <entry>The value of the barcode scanned during the event. Helps identify which item or order was processed.</entry>
+            <entry>String/alphanumeric</entry>
+          </row>
+          <row>
+            <entry>
+              <b>Event ID</b>
+            </entry>
+            <entry>Unique identifier assigned by AuditX to each recorded event. Used for tracking and linking evidence.</entry>
+            <entry>Unique identifier (GUID)</entry>
+          </row>
+          <row>
+            <entry>
+              <b>System</b>
+            </entry>
+            <entry>Name or identifier of the AuditX hardware device that recorded the event. Useful in multi-device deployments.</entry>
+            <entry>String (device name)</entry>
+          </row>
+          <row>
+            <entry>
+              <b>Sub Events</b>
+            </entry>
+            <entry>Number of sub-events (individual image captures or scan points) that occurred during the main event. Shown as clickable thumbnails in reports.</entry>
+            <entry>Integer (count)</entry>
+          </row>
+          <row>
+            <entry>
+              <b>Events</b>
+            </entry>
+            <entry>The main video or media file for the event. Click the icon to play the recording or download.</entry>
+            <entry>Video/media file</entry>
+          </row>
+          <row>
+            <entry>
+              <b>Event Duration (min)</b>
+            </entry>
+            <entry>Length of the recorded event in minutes. Helps track total recording time for operational analysis.</entry>
+            <entry>Decimal (minutes)</entry>
+          </row>
+          <row>
+            <entry>
+              <b>Recorded Time (System Local Time)</b>
+            </entry>
+            <entry>Exact timestamp of when the event was recorded, displayed in the system's local time zone. Accurate to the second for audit purposes.</entry>
+            <entry>Timestamp (YYYY-MM-DD HH:MM:SS)</entry>
+          </row>
+          <row>
+            <entry>
+              <b>Webhook / Meta</b>
+            </entry>
+            <entry>Indicates whether the event was linked to a webhook call or contained additional metadata. Shows status of external system integration.</entry>
+            <entry>Boolean or status indicator</entry>
+          </row>
+          <row>
+            <entry>
+              <b>Site</b>
+            </entry>
+            <entry>The physical location (site) where the event was recorded. Used to organize reports by warehouse or fulfillment center.</entry>
+            <entry>String (site name)</entry>
+          </row>
+        </tbody>
+      </tgroup>
+    </table>
+
+    <section>
+      <title>Report Filtering and Search Options</title>
+      
+      <section>
+        <title>Filter by Barcode or Event ID</title>
+        <p>Use the "Select Option" dropdown to choose:</p>
+        <ul>
+          <li><b>Barcode:</b> Search for events by the barcode value scanned</li>
+          <li><b>Event ID:</b> Search for a specific event using its unique identifier</li>
+        </ul>
+        <p>Enter the search term in the search box and results will filter automatically.</p>
+      </section>
+
+      <section>
+        <title>Filter by Site</title>
+        <p>Use the "Sites" dropdown to view events from a specific physical location:</p>
+        <ul>
+          <li>Displays all sites configured in your AuditX account</li>
+          <li>Select a site to see only events from that location</li>
+          <li>Leave blank to see events from all sites</li>
+        </ul>
+      </section>
+
+      <section>
+        <title>Filter by Time Period</title>
+        <p>Choose a predefined or custom date range:</p>
+        <dl>
+          <dlentry>
+            <dt>Predefined Ranges</dt>
+            <dd>
+              <ul>
+                <li>Today - Current calendar day</li>
+                <li>Last 7 days - Previous seven days including today</li>
+                <li>Last 30 days - Previous thirty days including today</li>
+                <li>Last 90 days - Previous ninety days including today</li>
+                <li>This month - Current calendar month</li>
+                <li>Last month - Previous calendar month</li>
+              </ul>
+            </dd>
+          </dlentry>
+          <dlentry>
+            <dt>Custom Range</dt>
+            <dd>
+              <p>Click "Custom" and specify:</p>
+              <ul>
+                <li><b>Start Date:</b> Beginning date for report period</li>
+                <li><b>End Date:</b> Ending date for report period (inclusive)</li>
+              </ul>
+            </dd>
+          </dlentry>
+        </dl>
+      </section>
+
+    </section>
+
+    <section>
+      <title>Viewing Event Details</title>
+      
+      <section>
+        <title>Video Playback</title>
+        <p>To watch a recorded event:</p>
+        <ol>
+          <li>Locate the event in the report table</li>
+          <li>Click the play icon in the "Events" column</li>
+          <li>The full-screen video player opens with the following features:</li>
+        </ol>
+        <ul>
+          <li><b>Video Timeline:</b> Scrub to any point in the video</li>
+          <li><b>Sub-Event Thumbnails:</b> Shown on the right side - click to jump to that moment</li>
+          <li><b>Playback Controls:</b> Play, pause, speed adjustment</li>
+          <li><b>Download Option:</b> Save the video file for archiving or sharing</li>
+          <li><b>Annotations:</b> Static and dynamic overlays show metadata throughout video</li>
+        </ul>
+      </section>
+
+      <section>
+        <title>Sub-Event Images</title>
+        <p>To view images captured during an event:</p>
+        <ol>
+          <li>Click on the sub-events count in the "Sub Events" column</li>
+          <li>Thumbnails of all captured images appear in a carousel</li>
+          <li>Click any thumbnail to view the full-size image</li>
+          <li>Image metadata (barcode, timestamp, etc.) displays with each image if annotations were enabled</li>
+        </ol>
+      </section>
+
+    </section>
+
+    <section>
+      <title>Exporting Report Data</title>
+      
+      <p>AuditX allows you to export filtered report data for further analysis and archiving:</p>
+      
+      <ol>
+        <li>Apply any filters to narrow the report (optional)</li>
+        <li>Click the "Download CSV" button at the bottom of the report</li>
+        <li>A CSV file is generated containing all visible report data</li>
+        <li>The file can be opened in spreadsheet applications (Excel, Google Sheets, etc.)</li>
+      </ol>
+
+      <section>
+        <title>CSV Export Contents</title>
+        <p>The exported CSV file includes all report columns:</p>
+        <ul>
+          <li>Barcode values</li>
+          <li>Event IDs</li>
+          <li>System names</li>
+          <li>Event durations</li>
+          <li>Recorded timestamps</li>
+          <li>Sub-event counts</li>
+          <li>Webhook status</li>
+          <li>Site information</li>
+        </ul>
+        <note type="tip">CSV exports are useful for data analysis, compliance reporting, and integration with external systems like ERP or BI tools.</note>
+      </section>
+
+    </section>
+
+    <section>
+      <title>Report Use Cases</title>
+      
+      <section>
+        <title>Daily Operations Monitoring</title>
+        <p>Use "Today" filter to review all events recorded during the current shift or day. Useful for:</p>
+        <ul>
+          <li>Quality assurance spot checks</li>
+          <li>Supervisor shift reviews</li>
+          <li>Identifying problematic items or patterns</li>
+        </ul>
+      </section>
+
+      <section>
+        <title>Dispute Resolution</title>
+        <p>Search by order ID or barcode to retrieve the complete event evidence for a specific order. The video playback and sub-event images provide comprehensive documentation of what was packed and how.</p>
+      </section>
+
+      <section>
+        <title>Audit Trail and Compliance</title>
+        <p>Export monthly or quarterly reports to CSV for compliance documentation. The system-generated timestamps and event IDs create an immutable audit trail suitable for regulatory reviews.</p>
+      </section>
+
+      <section>
+        <title>Performance Analysis</title>
+        <p>Export event duration data across multiple days to analyze packing efficiency. Identify peak hours, average event durations, and team performance metrics.</p>
+      </section>
+
+      <section>
+        <title>Integration Validation</title>
+        <p>Check the "Webhook / Meta" field to verify that events are being successfully sent to external systems. Failed webhook transmissions can be identified and retried.</p>
+      </section>
+
+    </section>
+
+    <section>
+      <title>Report Data Retention</title>
+      <p>AuditX retains event data according to your account plan:</p>
+      <ul>
+        <li><b>Standard Plan:</b> 90 days of event data</li>
+        <li><b>Extended Plan:</b> 365 days of event data</li>
+        <li><b>Archive Plan:</b> Unlimited retention with export to cold storage</li>
+      </ul>
+      <note type="important">Download and archive important reports regularly to ensure compliance with your data retention requirements.</note>
+    </section>
+
+  </refbody>
+</reference>

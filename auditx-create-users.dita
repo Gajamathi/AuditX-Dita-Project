@@ -1,0 +1,201 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE task PUBLIC "-//OASIS//DTD DITA Task//EN" "task.dtd">
+<task id="auditx_create_users">
+  <title>Create Users in AuditX</title>
+  <shortdesc>Create user accounts for team members with role-based access control. AuditX supports four distinct user types: Admin, Custom User, Supervisor, and Operator. Each role has specific permissions and access levels.</shortdesc>
+  
+  <taskbody>
+    <prereq>
+      <ul>
+        <li>You must have Admin role in AuditX</li>
+        <li>You must be logged into the AuditX Forge portal</li>
+        <li>You can create up to four users per system</li>
+        <li>You have the user's email address</li>
+        <li>You have determined the appropriate role for each user</li>
+      </ul>
+    </prereq>
+
+    <context>
+      <p>User creation is an essential step in setting up AuditX for your organization. Each user receives a unique login with role-based permissions that control access to specific features and functions within the system.</p>
+      <note type="tip">Review the User Roles and Access Control reference document to select the appropriate role for each team member based on their responsibilities.</note>
+    </context>
+
+    <steps>
+      <step>
+        <cmd>From the AuditX Forge dashboard, locate the "Users" tab in the left-hand navigation menu</cmd>
+        <info>The Users menu is accessible only to Admin users.</info>
+      </step>
+
+      <step>
+        <cmd>Click the "Add User" button on the right side of the screen</cmd>
+        <info>A user creation form will appear.</info>
+      </step>
+
+      <step>
+        <cmd>Complete the user information form with the following details</cmd>
+        <substeps>
+          <substep>
+            <cmd>Enter the user's full name in the "User Name" field</cmd>
+          </substep>
+          <substep>
+            <cmd>Enter the user's email address in the "Email" field</cmd>
+            <info>This email address is used for login credentials and password reset communications.</info>
+          </substep>
+          <substep>
+            <cmd>Enter a phone number if applicable</cmd>
+          </substep>
+        </substeps>
+      </step>
+
+      <step>
+        <cmd>Select the "User Type" from the dropdown menu</cmd>
+        <info>
+          <ul>
+            <li><b>Admin:</b> Full system access, can create users and configure workflows</li>
+            <li><b>Custom User:</b> Sub-admin with limited user creation and device access</li>
+            <li><b>Supervisor:</b> Read-only access to dashboards and reports</li>
+            <li><b>Operator:</b> Device touchscreen access only for packing operations</li>
+          </ul>
+        </info>
+      </step>
+
+      <step>
+        <cmd>Review the selected user type and associated permissions</cmd>
+        <info>A permission summary will display showing what features this user can access with their assigned role.</info>
+      </step>
+
+      <step>
+        <cmd>Click the "Save" button to create the user account</cmd>
+        <info>The system will send an automated password reset email to the user's registered email address.</info>
+      </step>
+
+      <step>
+        <cmd>Verify that the new user appears in your Users list</cmd>
+        <info>The user account is now active and the user can complete their password reset from the email sent by the system.</info>
+      </step>
+    </steps>
+
+    <result>
+      <p>The user account has been successfully created. The user will receive an automated email with a password reset link. They can now log in to AuditX with their email address and set their password.</p>
+    </result>
+
+    <postreq>
+      <ul>
+        <li>User receives password reset email and completes password setup</li>
+        <li>Assign the user to your site (Assign User to a Site)</li>
+        <li>Configure the user's access to specific workflows and config groups</li>
+        <li>Provide the user with device credentials if they need device-level access</li>
+      </ul>
+    </postreq>
+
+    <example>
+      <title>User Creation Examples</title>
+      <section>
+        <title>Admin User (System Manager)</title>
+        <simpletable>
+          <sthead>
+            <stentry>Field</stentry>
+            <stentry>Value</stentry>
+          </sthead>
+          <strow>
+            <stentry>User Name</stentry>
+            <stentry>John Manager</stentry>
+          </strow>
+          <strow>
+            <stentry>Email</stentry>
+            <stentry>john.manager@company.com</stentry>
+          </strow>
+          <strow>
+            <stentry>User Type</stentry>
+            <stentry>Admin</stentry>
+          </strow>
+        </simpletable>
+      </section>
+
+      <section>
+        <title>Supervisor User (Operations Manager)</title>
+        <simpletable>
+          <sthead>
+            <stentry>Field</stentry>
+            <stentry>Value</stentry>
+          </sthead>
+          <strow>
+            <stentry>User Name</stentry>
+            <stentry>Sarah Supervisor</stentry>
+          </strow>
+          <strow>
+            <stentry>Email</stentry>
+            <stentry>sarah.supervisor@company.com</stentry>
+          </strow>
+          <strow>
+            <stentry>User Type</stentry>
+            <stentry>Supervisor</stentry>
+          </strow>
+        </simpletable>
+      </section>
+
+      <section>
+        <title>Operator User (Packing Station)</title>
+        <simpletable>
+          <sthead>
+            <stentry>Field</stentry>
+            <stentry>Value</stentry>
+          </sthead>
+          <strow>
+            <stentry>User Name</stentry>
+            <stentry>Mike Operator</stentry>
+          </strow>
+          <strow>
+            <stentry>Email</stentry>
+            <stentry>mike.operator@company.com</stentry>
+          </strow>
+          <strow>
+            <stentry>User Type</stentry>
+            <stentry>Operator</stentry>
+          </strow>
+        </simpletable>
+      </section>
+    </example>
+
+    <section id="user_creation_limits">
+      <title>User Creation Limits and Guidelines</title>
+      <dl>
+        <dlentry>
+          <dt>Maximum Users Per System</dt>
+          <dd>AuditX supports creating up to four (4) users per system. Additional users may require account plan upgrades.</dd>
+        </dlentry>
+        <dlentry>
+          <dt>Admin Users</dt>
+          <dd>It is recommended to have at least one additional Admin user as backup for system administration. Have a maximum of 2-3 Admin users.</dd>
+        </dlentry>
+        <dlentry>
+          <dt>Operator Users</dt>
+          <dd>Multiple Operator accounts can be created for different packing stations. Each operator uses device touchscreen credentials.</dd>
+        </dlentry>
+        <dlentry>
+          <dt>Unique Email Addresses</dt>
+          <dd>Each user must have a unique email address. Shared mailboxes are not recommended for security reasons.</dd>
+        </dlentry>
+      </dl>
+    </section>
+
+    <section id="user_troubleshooting">
+      <title>User Creation Troubleshooting</title>
+      <dl>
+        <dlentry>
+          <dt>User limit reached</dt>
+          <dd>Delete unused users or contact AuditX support to upgrade your account plan for additional user licenses.</dd>
+        </dlentry>
+        <dlentry>
+          <dt>Duplicate email error</dt>
+          <dd>Ensure each user has a unique email address. Check for existing accounts using the same email.</dd>
+        </dlentry>
+        <dlentry>
+          <dt>Password reset email not received</dt>
+          <dd>Check the user's spam folder or wait 5-10 minutes. You can resend the reset link from the Users management page.</dd>
+        </dlentry>
+      </dl>
+    </section>
+
+  </taskbody>
+</task>

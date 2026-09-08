@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE concept PUBLIC "-//OASIS//DTD DITA Concept//EN" "concept.dtd">
+<concept id="auditx_product_overview">
+  <title>AuditX Product Overview</title>
+  <shortdesc>AuditX is a comprehensive order verification and visual documentation platform designed for eCommerce and logistics operations. It enables real-time capture, verification, and linkage of packing activities to order IDs for complete traceability.</shortdesc>
+  
+  <conbody>
+    <section>
+      <title>Product Purpose</title>
+      <p>AuditX provides a unified solution for capturing and verifying packed items against original order data. It integrates with major eCommerce platforms like Shopify to ensure accuracy before shipping, reducing mis-shipments and enabling quick resolution of disputes.</p>
+    </section>
+
+    <section>
+      <title>Key Capabilities</title>
+      <ul>
+        <li><b>Order Verification Workflow:</b> Automatically record and validate packed items against Shopify or other eCommerce orders to ensure accuracy before shipping.</li>
+        <li><b>Video Recording Workflow:</b> Record the entire packing process and link the video to the order ID for complete visual proof during audits and dispute resolution.</li>
+        <li><b>Image Logging Workflow:</b> Capture high-resolution images of packed orders or key packing steps, linking them directly to order IDs for quick verification.</li>
+        <li><b>Multi-Channel Integration:</b> Seamless webhook integration with Shopify, WMS systems, and custom external applications.</li>
+        <li><b>Comprehensive Reporting:</b> Access complete event logs with barcode tracking, video playback, sub-event images, and export capabilities.</li>
+      </ul>
+    </section>
+
+    <section>
+      <title>System Architecture</title>
+      <p>AuditX operates with the following core components:</p>
+      <ul>
+        <li>Web-based administration portal (Forge)</li>
+        <li>Hardware recording devices (AHD-series)</li>
+        <li>Barcode scanning integration</li>
+        <li>Video/image capture and storage</li>
+        <li>Webhook-based data synchronization</li>
+        <li>Reporting and analytics dashboard</li>
+      </ul>
+    </section>
+
+    <section>
+      <title>Supported Workflows</title>
+      <p>AuditX supports three primary workflow types, each tailored to different operational needs:</p>
+      <table>
+        <tgroup cols="2">
+          <colspec colname="col1"/>
+          <colspec colname="col2"/>
+          <thead>
+            <row>
+              <entry>Workflow Type</entry>
+              <entry>Primary Use Case</entry>
+            </row>
+          </thead>
+          <tbody>
+            <row>
+              <entry>Order Verification</entry>
+              <entry>Validate scanned items match order specifications</entry>
+            </row>
+            <row>
+              <entry>Video Recording</entry>
+              <entry>Capture complete packing process video</entry>
+            </row>
+            <row>
+              <entry>Image Logging</entry>
+              <entry>Capture still images at each scan point</entry>
+            </row>
+          </tbody>
+        </tgroup>
+      </table>
+    </section>
+
+  </conbody>
+</concept>

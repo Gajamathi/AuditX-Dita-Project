@@ -1,0 +1,332 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE reference PUBLIC "-//OASIS//DTD DITA Reference//EN" "reference.dtd">
+<reference id="auditx_troubleshooting">
+  <title>AuditX Troubleshooting Guide</title>
+  <shortdesc>Solutions to common issues and problems you might encounter while using AuditX. Organized by problem category with step-by-step resolution instructions.</shortdesc>
+  
+  <refbody>
+    <section>
+      <title>Account and Access Issues</title>
+
+      <section>
+        <title>Cannot Log Into Forge Portal</title>
+        <dl>
+          <dlentry>
+            <dt>Problem: Email/password not accepted</dt>
+            <dd>
+              <p><b>Solution:</b></p>
+              <ol>
+                <li>Verify you are using the correct email address associated with your account</li>
+                <li>Check that Caps Lock is not enabled</li>
+                <li>Click "Forgot Password" to reset your credentials</li>
+                <li>Wait 10 minutes and retry with new password</li>
+                <li>If still failing, contact AuditX support</li>
+              </ol>
+            </dd>
+          </dlentry>
+
+          <dlentry>
+            <dt>Problem: Account locked after multiple failed attempts</dt>
+            <dd>
+              <p><b>Solution:</b></p>
+              <ol>
+                <li>Wait 30 minutes for account to unlock automatically</li>
+                <li>Or click "Forgot Password" to unlock via email link</li>
+                <li>Reset your password through the email verification process</li>
+              </ol>
+            </dd>
+          </dlentry>
+
+          <dlentry>
+            <dt>Problem: Receiving "Access Denied" error</dt>
+            <dd>
+              <p><b>Solution:</b></p>
+              <ol>
+                <li>Verify your user role has permission for this feature (check User Roles reference)</li>
+                <li>Confirm you are logged in as the correct user</li>
+                <li>Ask an Admin to verify your user permissions</li>
+                <li>Try logging out and logging back in</li>
+              </ol>
+            </dd>
+          </dlentry>
+        </dl>
+      </section>
+
+      <section>
+        <title>Password Reset Email Not Received</title>
+        <dl>
+          <dlentry>
+            <dt>Problem: Email is missing or delayed</dt>
+            <dd>
+              <p><b>Solution:</b></p>
+              <ol>
+                <li>Check your spam or junk folder - automated emails are often filtered</li>
+                <li>Wait 5-10 minutes for email to arrive (system takes time to send)</li>
+                <li>Check that email is spelled correctly in the password reset form</li>
+                <li>Request a new password reset email if link expires (valid for 24 hours)</li>
+                <li>Contact AuditX support if email still doesn't arrive</li>
+              </ol>
+            </dd>
+          </dlentry>
+        </dl>
+      </section>
+
+    </section>
+
+    <section>
+      <title>Device and Recording Issues</title>
+
+      <section>
+        <title>AuditX Device Not Powering On</title>
+        <dl>
+          <dlentry>
+            <dt>Problem: Device shows no lights or response</dt>
+            <dd>
+              <p><b>Solution:</b></p>
+              <ol>
+                <li>Verify power cable is firmly connected to device and power outlet</li>
+                <li>Try a different power outlet to rule out outlet failure</li>
+                <li>Check that power strip (if used) is turned on</li>
+                <li>Wait 30 seconds for device to boot up after power connection</li>
+                <li>If device still unresponsive, contact AuditX support (may indicate hardware failure)</li>
+              </ol>
+            </dd>
+          </dlentry>
+        </dl>
+      </section>
+
+      <section>
+        <title>Camera Not Capturing Video or Images</title>
+        <dl>
+          <dlentry>
+            <dt>Problem: Recording starts but no video is saved</dt>
+            <dd>
+              <p><b>Solution:</b></p>
+              <ol>
+                <li>Verify camera lens is clean and not obstructed</li>
+                <li>Check that device has available storage space (check credit balance)</li>
+                <li>Verify workflow is properly assigned to the device via Config Group</li>
+                <li>Restart the AuditX device</li>
+                <li>Test with a simple manual recording to isolate workflow issue</li>
+                <li>If still failing, contact AuditX support</li>
+              </ol>
+            </dd>
+          </dlentry>
+
+          <dlentry>
+            <dt>Problem: Video quality is poor or pixelated</dt>
+            <dd>
+              <p><b>Solution:</b></p>
+              <ol>
+                <li>Clean camera lens with soft, dry cloth</li>
+                <li>Check lighting at packing station - ensure adequate brightness</li>
+                <li>Verify resolution is set to appropriate level (4K vs 1080p)</li>
+                <li>Check network connection stability if using cloud storage</li>
+                <li>Reduce activity in nearby WiFi channels if wireless connection</li>
+              </ol>
+            </dd>
+          </dlentry>
+        </dl>
+      </section>
+
+      <section>
+        <title>Barcode Scanner Not Working</title>
+        <dl>
+          <dlentry>
+            <dt>Problem: Barcodes scanned but not recognized by AuditX</dt>
+            <dd>
+              <p><b>Solution:</b></p>
+              <ol>
+                <li>Verify barcode scanner is powered on and connected</li>
+                <li>Test scanner on a known working barcode (e.g., product packaging)</li>
+                <li>Check barcode length range configuration in workflow:
+                  <ul>
+                    <li>Your barcodes may not match Min/Max length settings</li>
+                    <li>Expand length range if needed</li>
+                  </ul>
+                </li>
+                <li>Enable "Suppress Control Characters" if scanner adds extra codes</li>
+                <li>Verify barcode field name matches your barcode type</li>
+                <li>Try disabling barcode classification rules to test basic scanning</li>
+              </ol>
+            </dd>
+          </dlentry>
+
+          <dlentry>
+            <dt>Problem: Scanning takes too long or causes delays</dt>
+            <dd>
+              <p><b>Solution:</b></p>
+              <ol>
+                <li>Check that barcode classification RegEx patterns are not overly complex</li>
+                <li>Verify scanner is reading barcodes cleanly (no partial reads)</li>
+                <li>Check device processor load (restart if running many tasks)</li>
+                <li>Ensure WiFi/network connection is stable if using cloud sync</li>
+              </ol>
+            </dd>
+          </dlentry>
+        </dl>
+      </section>
+
+    </section>
+
+    <section>
+      <title>Workflow and Configuration Issues</title>
+
+      <section>
+        <title>Workflow Not Assigned to Device</title>
+        <dl>
+          <dlentry>
+            <dt>Problem: Created workflow but device not recording</dt>
+            <dd>
+              <p><b>Solution:</b></p>
+              <ol>
+                <li>Verify workflow is part of a Config Group (see "Create Config Groups")</li>
+                <li>Confirm Config Group is assigned to your system (see "Assign Config Group to System")</li>
+                <li>Check that system status is "Active" (green indicator)</li>
+                <li>Reload/restart the device to load new configuration</li>
+                <li>Check in Reports to verify events are being recorded</li>
+              </ol>
+            </dd>
+          </dlentry>
+        </dl>
+      </section>
+
+      <section>
+        <title>Shopify Integration Not Working</title>
+        <dl>
+          <dlentry>
+            <dt>Problem: Orders not appearing in Order Verification workflow</dt>
+            <dd>
+              <p><b>Solution:</b></p>
+              <ol>
+                <li>Verify Event URL Report is enabled in Settings (required for Shopify)</li>
+                <li>Check Shopify store name is correct (e.g., "mystore" from mystore.myshopify.com)</li>
+                <li>Verify Shopify API access key is valid (check in Shopify Admin)</li>
+                <li>Allow 5-10 minutes for first sync of orders</li>
+                <li>Test with a recent order placed in Shopify</li>
+                <li>Check AuditX system date/time - must match Shopify server time</li>
+                <li>If still failing, regenerate API key in Shopify Admin</li>
+              </ol>
+            </dd>
+          </dlentry>
+        </dl>
+      </section>
+
+    </section>
+
+    <section>
+      <title>Reporting and Data Issues</title>
+
+      <section>
+        <title>Events Not Appearing in Reports</title>
+        <dl>
+          <dlentry>
+            <dt>Problem: Created events but cannot find them in Reports</dt>
+            <dd>
+              <p><b>Solution:</b></p>
+              <ol>
+                <li>Verify filter settings are not excluding your events:
+                  <ul>
+                    <li>Check Site filter is set to correct location</li>
+                    <li>Verify date range includes when event was recorded</li>
+                    <li>If searching by barcode/event ID, verify exact value</li>
+                  </ul>
+                </li>
+                <li>Check device system time is correct (incorrect time can cause filtering issues)</li>
+                <li>Allow 1-2 minutes for events to appear in reports (slight processing delay)</li>
+                <li>Verify workflow is active and Config Group assigned to device</li>
+                <li>Check system credit balance - no credits = no new recordings</li>
+              </ol>
+            </dd>
+          </dlentry>
+        </dl>
+      </section>
+
+      <section>
+        <title>Cannot Download Report or CSV</title>
+        <dl>
+          <dlentry>
+            <dt>Problem: Download button not working or CSV file is empty</dt>
+            <dd>
+              <p><b>Solution:</b></p>
+              <ol>
+                <li>Verify report has data (check that filters are not too restrictive)</li>
+                <li>Try again - temporary network issues may cause download to fail</li>
+                <li>Clear browser cache and try again</li>
+                <li>Try different browser (Chrome, Firefox, Safari, Edge)</li>
+                <li>Check that browser allows downloads from AuditX domain</li>
+                <li>For very large exports, try exporting smaller date ranges</li>
+              </ol>
+            </dd>
+          </dlentry>
+        </dl>
+      </section>
+
+      <section>
+        <title>Video Playback Issues</title>
+        <dl>
+          <dlentry>
+            <dt>Problem: Video won't play or playback is choppy</dt>
+            <dd>
+              <p><b>Solution:</b></p>
+              <ol>
+                <li>Verify internet connection speed is adequate (minimum 5 Mbps for HD video)</li>
+                <li>Try closing other applications using bandwidth</li>
+                <li>Clear browser cache and temporary files</li>
+                <li>Try a different browser or device</li>
+                <li>Wait 30 seconds for video to buffer before playing</li>
+                <li>Lower playback quality setting if available</li>
+                <li>Try downloading the video file and playing locally instead of streaming</li>
+              </ol>
+            </dd>
+          </dlentry>
+        </dl>
+      </section>
+
+    </section>
+
+    <section>
+      <title>Credit and Billing Issues</title>
+
+      <section>
+        <title>System Stopped Recording - Credit Exhausted</title>
+        <dl>
+          <dlentry>
+            <dt>Problem: "Credit Exhausted" message appears, recording stopped</dt>
+            <dd>
+              <p><b>Solution:</b></p>
+              <ol>
+                <li>Check your current credit balance in account settings</li>
+                <li>Purchase additional credits through your AuditX account</li>
+                <li>Alternatively, delete old or unnecessary events to free space</li>
+                <li>Check Credit Exhaust configuration - if set to "Overwrite", oldest events will be replaced</li>
+                <li>Note: Some events may not be recovered after overwrite, plan accordingly</li>
+              </ol>
+            </dd>
+          </dlentry>
+        </dl>
+      </section>
+
+    </section>
+
+    <section>
+      <title>Contact Support</title>
+      <p>If you cannot resolve an issue using this troubleshooting guide:</p>
+      <ol>
+        <li>Gather information: screenshot, error message, steps to reproduce</li>
+        <li>Note your system serial number and product name</li>
+        <li>Send an email to AuditX support including:
+          <ul>
+            <li>Description of the issue</li>
+            <li>Product name and serial number</li>
+            <li>Steps you have already tried</li>
+            <li>Screenshot or error message if available</li>
+            <li>List of connected peripherals (scanner, camera, etc.)</li>
+          </ul>
+        </li>
+        <li>AuditX support will respond within 24 hours with assistance</li>
+      </ol>
+    </section>
+
+  </refbody>
+</reference>

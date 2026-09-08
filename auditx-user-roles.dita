@@ -1,0 +1,174 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE reference PUBLIC "-//OASIS//DTD DITA Reference//EN" "reference.dtd">
+<reference id="auditx_user_roles">
+  <title>AuditX User Roles and Access Control</title>
+  <shortdesc>AuditX implements role-based access control (RBAC) with four distinct user types, each with specific permissions and responsibilities. Organizations can create up to four users per system.</shortdesc>
+  
+  <refbody>
+    <section>
+      <title>User Role Types</title>
+    </section>
+
+    <table>
+      <title>AuditX User Roles and Permissions</title>
+      <tgroup cols="4">
+        <colspec colname="role" colwidth="15%"/>
+        <colspec colname="access" colwidth="20%"/>
+        <colspec colname="responsibilities" colwidth="35%"/>
+        <colspec colname="restrictions" colwidth="30%"/>
+        <thead>
+          <row>
+            <entry>Role Type</entry>
+            <entry>Login Credentials</entry>
+            <entry>Key Responsibilities</entry>
+            <entry>Limitations</entry>
+          </row>
+        </thead>
+        <tbody>
+          <row>
+            <entry>
+              <b>Admin</b>
+            </entry>
+            <entry>Separate credentials for Forge app and video logging device</entry>
+            <entry>
+              <ul>
+                <li>Create and manage all users</li>
+                <li>Create and assign sites</li>
+                <li>Configure workflows</li>
+                <li>Manage system-wide settings</li>
+                <li>Access all reports and logs</li>
+                <li>Setup webhooks and integrations</li>
+              </ul>
+            </entry>
+            <entry>None - Full system access</entry>
+          </row>
+
+          <row>
+            <entry>
+              <b>Custom User</b>
+            </entry>
+            <entry>Forge app credentials</entry>
+            <entry>
+              <ul>
+                <li>Perform most admin functions</li>
+                <li>Manage workflows and reports</li>
+                <li>Access audit logs</li>
+              </ul>
+            </entry>
+            <entry>
+              <ul>
+                <li>Cannot create new users</li>
+                <li>Limited device access</li>
+                <li>Cannot modify account settings</li>
+                <li>Cannot access system logs</li>
+              </ul>
+            </entry>
+          </row>
+
+          <row>
+            <entry>
+              <b>Supervisor</b>
+            </entry>
+            <entry>Forge app credentials</entry>
+            <entry>
+              <ul>
+                <li>View dashboard metrics</li>
+                <li>Access reports and analytics</li>
+                <li>Monitor packing operations</li>
+                <li>View event records</li>
+              </ul>
+            </entry>
+            <entry>
+              <ul>
+                <li>Read-only access</li>
+                <li>Cannot modify workflows</li>
+                <li>Cannot access configuration</li>
+                <li>Cannot manage users or sites</li>
+              </ul>
+            </entry>
+          </row>
+
+          <row>
+            <entry>
+              <b>Operator</b>
+            </entry>
+            <entry>Device touchscreen only</entry>
+            <entry>
+              <ul>
+                <li>Perform packing activities</li>
+                <li>Scan barcodes</li>
+                <li>Record events</li>
+                <li>Capture images/video</li>
+              </ul>
+            </entry>
+            <entry>
+              <ul>
+                <li>No Forge access</li>
+                <li>Device touchscreen only</li>
+                <li>Cannot modify settings</li>
+                <li>Cannot access reports</li>
+                <li>Cannot manage users</li>
+              </ul>
+            </entry>
+          </row>
+        </tbody>
+      </tgroup>
+    </table>
+
+    <section>
+      <title>Access Control Summary</title>
+      <simpletable>
+        <sthead>
+          <stentry>Feature Area</stentry>
+          <stentry>Admin</stentry>
+          <stentry>Custom User</stentry>
+          <stentry>Supervisor</stentry>
+          <stentry>Operator</stentry>
+        </sthead>
+        <strow>
+          <stentry>User Management</stentry>
+          <stentry>✓ Full</stentry>
+          <stentry>✗ Limited</stentry>
+          <stentry>✗ None</stentry>
+          <stentry>✗ None</stentry>
+        </strow>
+        <strow>
+          <stentry>Site Management</stentry>
+          <stentry>✓ Full</stentry>
+          <stentry>✓ Full</stentry>
+          <stentry>✗ None</stentry>
+          <stentry>✗ None</stentry>
+        </strow>
+        <strow>
+          <stentry>Workflow Configuration</stentry>
+          <stentry>✓ Full</stentry>
+          <stentry>✓ Full</stentry>
+          <stentry>✗ None</stentry>
+          <stentry>✗ None</stentry>
+        </strow>
+        <strow>
+          <stentry>Reports &amp; Analytics</stentry>
+          <stentry>✓ Full</stentry>
+          <stentry>✓ Full</stentry>
+          <stentry>✓ Read-Only</stentry>
+          <stentry>✗ None</stentry>
+        </strow>
+        <strow>
+          <stentry>Device Touchscreen</stentry>
+          <stentry>✓ Yes</stentry>
+          <stentry>✓ Limited</stentry>
+          <stentry>✗ No</stentry>
+          <stentry>✓ Yes</stentry>
+        </strow>
+        <strow>
+          <stentry>System Configuration</stentry>
+          <stentry>✓ Full</stentry>
+          <stentry>✗ None</stentry>
+          <stentry>✗ None</stentry>
+          <stentry>✗ None</stentry>
+        </strow>
+      </simpletable>
+    </section>
+
+  </refbody>
+</reference>

@@ -1,0 +1,469 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="auditx_dita_architecture">
+  <title>AuditX DITA Information Architecture and Publishing Guide</title>
+  <shortdesc>This document explains the DITA XML structure, single-sourcing strategy, audience profiling, and multi-channel publishing approach for AuditX documentation.</shortdesc>
+  
+  <body>
+
+    <section>
+      <title>Overview: Single-Sourcing Strategy</title>
+      <p>AuditX documentation uses DITA (Darwin Information Typing Architecture) to implement true single-sourcing - one source, multiple outputs. This approach provides:</p>
+      <ul>
+        <li><b>Content Reusability:</b> Topics are written once and reused across multiple guides</li>
+        <li><b>Audience Targeting:</b> Metadata filters deliver content to appropriate user roles</li>
+        <li><b>Multi-Channel Support:</b> Same source generates HTML, PDF, Help systems, and more</li>
+        <li><b>Consistency:</b> Single source eliminates duplicate content and version control issues</li>
+        <li><b>Maintainability:</b> Updates to one topic automatically propagate to all outputs</li>
+      </ul>
+    </section>
+
+    <section>
+      <title>DITA Source File Organization</title>
+      
+      <section>
+        <title>File Structure</title>
+        <p>AuditX DITA source files are organized as follows:</p>
+        <ul>
+          <li><b>Concept Files (*.dita):</b> Explain what something is
+            <ul>
+              <li>auditx-product-overview.dita - Product purpose and capabilities</li>
+              <li>auditx-workflows-overview.dita - Workflow types and selection guide</li>
+            </ul>
+          </li>
+          <li><b>Task Files (*.dita):</b> Explain how to do something
+            <ul>
+              <li>auditx-reset-password.dita - Password reset procedure</li>
+              <li>auditx-create-site.dita - Site creation steps</li>
+              <li>auditx-create-users.dita - User account creation</li>
+              <li>auditx-create-order-verification-workflow.dita - Workflow setup</li>
+            </ul>
+          </li>
+          <li><b>Reference Files (*.dita):</b> Contain structured factual information
+            <ul>
+              <li>auditx-user-roles.dita - Role definitions and permissions table</li>
+              <li>auditx-reports-reference.dita - Report fields and usage</li>
+              <li>auditx-glossary.dita - Term definitions</li>
+              <li>auditx-troubleshooting.dita - Solutions and support info</li>
+            </ul>
+          </li>
+          <li><b>Map Files (*.ditamap):</b> Assemble topics into deliverables
+            <ul>
+              <li>auditx-master.ditamap - All documentation in canonical order</li>
+              <li>auditx-admin-guide.ditamap - Administrator-focused content</li>
+              <li>auditx-supervisor-guide.ditamap - Supervisor/operations content</li>
+              <li>auditx-operator-guide.ditamap - Operator quick reference</li>
+            </ul>
+          </li>
+        </ul>
+      </section>
+
+      <section>
+        <title>Naming Convention</title>
+        <p>All AuditX DITA files follow this naming pattern:</p>
+        <ul>
+          <li><codeph>auditx-[topic-name].dita</codeph> for individual topics</li>
+          <li><codeph>auditx-[audience]-guide.ditamap</codeph> for audience-specific maps</li>
+          <li><codeph>auditx-master.ditamap</codeph> for the master map</li>
+        </ul>
+        <p>This naming makes it easy to identify AuditX-related files in a larger documentation environment.</p>
+      </section>
+
+    </section>
+
+    <section>
+      <title>DITA Topic Types</title>
+      
+      <section>
+        <title>Concept Topics</title>
+        <p><b>Purpose:</b> Explain "what" and "why" - provide background, context, and understanding</p>
+        <p><b>Structure:</b></p>
+        <ul>
+          <li>Title - Descriptive noun phrase</li>
+          <li>Shortdesc - One-sentence summary</li>
+          <li>Sections - Organized by theme</li>
+          <li>Examples and figures</li>
+        </ul>
+        <p><b>AuditX Concepts:</b></p>
+        <ul>
+          <li>Product Overview (what is AuditX, key capabilities)</li>
+          <li>Workflows Overview (types of workflows, when to use each)</li>
+        </ul>
+      </section>
+
+      <section>
+        <title>Task Topics</title>
+        <p><b>Purpose:</b> Provide step-by-step instructions for accomplishing a goal</p>
+        <p><b>Structure:</b></p>
+        <ul>
+          <li>Title - Action-oriented verb phrase</li>
+          <li>Shortdesc - What will be accomplished</li>
+          <li>Prereq - What must be done first</li>
+          <li>Steps - Numbered action steps with substeps</li>
+          <li>Result - What user should see/have after completing task</li>
+          <li>Postreq - What comes next</li>
+          <li>Examples - Sample data or screenshots</li>
+        </ul>
+        <p><b>AuditX Tasks:</b></p>
+        <ul>
+          <li>Reset Password - Initial access setup</li>
+          <li>Create Site - Location setup</li>
+          <li>Create Users - Team member onboarding</li>
+          <li>Create Workflows - Operational configuration</li>
+        </ul>
+      </section>
+
+      <section>
+        <title>Reference Topics</title>
+        <p><b>Purpose:</b> Provide lookup information, specifications, and detailed data</p>
+        <p><b>Structure:</b></p>
+        <ul>
+          <li>Title - Noun phrase identifying information type</li>
+          <li>Shortdesc - Category of information</li>
+          <li>Tables - Structured data, specifications</li>
+          <li>Definition lists - Term-definition pairs</li>
+          <li>Sections - Organized by category</li>
+        </ul>
+        <p><b>AuditX References:</b></p>
+        <ul>
+          <li>User Roles - Role definitions and permission matrix</li>
+          <li>Reports - Data field definitions and usage</li>
+          <li>Glossary - Term definitions</li>
+          <li>Troubleshooting - Problem-solution pairs</li>
+        </ul>
+      </section>
+
+    </section>
+
+    <section>
+      <title>Audience Profiling and Filtering</title>
+      
+      <section>
+        <title>Profiling Attributes</title>
+        <p>AuditX uses DITA profiling attributes to target content to specific audiences:</p>
+        <ul>
+          <li><codeph>&lt;audience type="administrator"/&gt;</codeph> - System admins and IT staff</li>
+          <li><codeph>&lt;audience type="custom-user"/&gt;</codeph> - Custom/sub-admin users</li>
+          <li><codeph>&lt;audience type="supervisor"/&gt;</codeph> - Operations supervisors, managers</li>
+          <li><codeph>&lt;audience type="operator"/&gt;</codeph> - Packing operators</li>
+          <li><codeph>&lt;audience type="all-users"/&gt;</codeph> - Content for all audiences</li>
+        </ul>
+      </section>
+
+      <section>
+        <title>How Profiling Works</title>
+        <p>Audience metadata is placed in the <codeph>&lt;topicmeta&gt;</codeph> section of each topic reference in the map:</p>
+        <codeblock>
+&lt;topicref href="auditx-create-users.dita" type="task"&gt;
+  &lt;topicmeta&gt;
+    &lt;audience type="administrator"/&gt;
+  &lt;/topicmeta&gt;
+&lt;/topicref&gt;
+        </codeblock>
+        <p>When publishing, the build process:</p>
+        <ol>
+          <li>Reads the audience attribute from the map</li>
+          <li>Includes/excludes the topic based on selected output audience</li>
+          <li>Generates audience-specific deliverables</li>
+        </ol>
+      </section>
+
+      <section>
+        <title>Example: Topic Included in Multiple Audiences</title>
+        <p>Some topics are useful for multiple audiences. The Product Overview appears in Admin, Supervisor, and Custom User maps:</p>
+        <codeblock>
+&lt;topicref href="auditx-product-overview.dita" type="concept"&gt;
+  &lt;topicmeta&gt;
+    &lt;audience type="administrator"/&gt;
+    &lt;audience type="supervisor"/&gt;
+    &lt;audience type="custom-user"/&gt;
+  &lt;/topicmeta&gt;
+&lt;/topicref&gt;
+        </codeblock>
+      </section>
+
+    </section>
+
+    <section>
+      <title>DITA Maps: Organizing for Multiple Deliverables</title>
+      
+      <section>
+        <title>Master Map (auditx-master.ditamap)</title>
+        <p><b>Purpose:</b> Single source of truth containing all AuditX documentation topics</p>
+        <p><b>Audience:</b> Not used for direct publishing; serves as canonical reference</p>
+        <p><b>Content:</b> All topics organized in logical order with all audience attributes</p>
+        <p><b>Use Case:</b> Ensures completeness and consistency; used to generate multiple audience-specific maps</p>
+      </section>
+
+      <section>
+        <title>Administrator Guide (auditx-admin-guide.ditamap)</title>
+        <p><b>Purpose:</b> Comprehensive guide for system administrators</p>
+        <p><b>Audience Filter:</b> administrator, custom-user</p>
+        <p><b>Includes:</b></p>
+        <ul>
+          <li>Getting Started (product overview, reset password)</li>
+          <li>System Setup (site creation, user management, system configuration)</li>
+          <li>Workflow Configuration (all three workflow types)</li>
+          <li>Advanced Configuration (webhooks, config groups, ROI)</li>
+          <li>Monitoring and Reporting (reports, activity logs)</li>
+        </ul>
+        <p><b>Excludes:</b> Operator-only content, supervisor-only dashboards</p>
+        <p><b>Typical Output:</b> PDF Administrator Manual, HTML Help Portal, Oxygen WebHelp</p>
+      </section>
+
+      <section>
+        <title>Supervisor Guide (auditx-supervisor-guide.ditamap)</title>
+        <p><b>Purpose:</b> Reference for operations supervisors and managers</p>
+        <p><b>Audience Filter:</b> supervisor</p>
+        <p><b>Includes:</b></p>
+        <ul>
+          <li>Welcome and introduction</li>
+          <li>Understanding supervisor role and capabilities</li>
+          <li>Workflow overview (read-only)</li>
+          <li>Reports and monitoring section</li>
+          <li>Quick troubleshooting guide</li>
+        </ul>
+        <p><b>Excludes:</b> Configuration tasks, admin functions, operator procedures</p>
+        <p><b>Typical Output:</b> Quick Start PDF, Mobile-friendly HTML, Dashboard guide</p>
+      </section>
+
+      <section>
+        <title>Operator Guide (auditx-operator-guide.ditamap)</title>
+        <p><b>Purpose:</b> Quick reference for packing floor operators</p>
+        <p><b>Audience Filter:</b> operator</p>
+        <p><b>Includes:</b></p>
+        <ul>
+          <li>Welcome and role overview</li>
+          <li>Workflow overview (from operator perspective)</li>
+          <li>Device operation procedures</li>
+          <li>Barcode scanning tips</li>
+          <li>Simple troubleshooting</li>
+        </ul>
+        <p><b>Excludes:</b> All admin and configuration content</p>
+        <p><b>Typical Output:</b> Laminated quick reference card, Mobile app, Touchscreen guide</p>
+      </section>
+
+    </section>
+
+    <section>
+      <title>Multi-Channel Publishing Strategy</title>
+      
+      <section>
+        <title>Publishing Channels</title>
+        <p>The same DITA source content can be published to multiple output formats:</p>
+        <dl>
+          <dlentry>
+            <dt>PDF (Portable Document Format)</dt>
+            <dd>
+              <p><b>Use Cases:</b> Printing, offline reading, email distribution</p>
+              <p><b>Output Types:</b></p>
+              <ul>
+                <li>Administrator Manual (60+ pages, full index and TOC)</li>
+                <li>Supervisor Quick Start (10-15 pages, focused sections)</li>
+                <li>Operator Reference Card (2-4 pages, laminated format)</li>
+              </ul>
+              <p><b>Publishing Tool:</b> Oxygen XML Editor, Apache FOP, or DITA OT</p>
+            </dd>
+          </dlentry>
+
+          <dlentry>
+            <dt>HTML (Web-Based)</dt>
+            <dd>
+              <p><b>Use Cases:</b> Web portal, help system, documentation site</p>
+              <p><b>Output Types:</b></p>
+              <ul>
+                <li>Responsive HTML5 for web browsers</li>
+                <li>Single-page applications with search</li>
+                <li>Integrated help system in Forge portal</li>
+              </ul>
+              <p><b>Publishing Tool:</b> DITA Open Toolkit, Oxygen WebHelp</p>
+            </dd>
+          </dlentry>
+
+          <dlentry>
+            <dt>Responsive HTML (Mobile)</dt>
+            <dd>
+              <p><b>Use Cases:</b> Mobile devices, tablets, responsive design</p>
+              <p><b>Features:</b></p>
+              <ul>
+                <li>Touch-friendly navigation</li>
+                <li>Optimized for small screens</li>
+                <li>Offline capability</li>
+              </ul>
+              <p><b>Publishing Tool:</b> DITA OT with responsive plugin</p>
+            </dd>
+          </dlentry>
+
+          <dlentry>
+            <dt>Help System (Embedded)</dt>
+            <dd>
+              <p><b>Use Cases:</b> In-application help, contextual assistance</p>
+              <p><b>Integration:</b> CHM (Windows Help), WebHelp, Inline help in Forge</p>
+              <p><b>Publishing Tool:</b> DITA OT, Oxygen</p>
+            </dd>
+          </dlentry>
+
+          <dlentry>
+            <dt>EPUB (E-Book)</dt>
+            <dd>
+              <p><b>Use Cases:</b> E-reader distribution, offline reading on tablets</p>
+              <p><b>Publishing Tool:</b> DITA OT, Oxygen</p>
+            </dd>
+          </dlentry>
+
+        </dl>
+      </section>
+
+      <section>
+        <title>Publishing Workflow</title>
+        <p>The typical DITA publishing workflow:</p>
+        <ol>
+          <li><b>Select Map:</b> Choose audience-specific map (admin-guide, supervisor-guide, etc.)</li>
+          <li><b>Apply Filters:</b> Specify audience profiling attributes to include/exclude</li>
+          <li><b>Choose Output Format:</b> Select PDF, HTML, EPUB, or other format</li>
+          <li><b>Configure Output Settings:</b> Set branding, colors, fonts, page layout</li>
+          <li><b>Generate:</b> Run DITA processing to create deliverable</li>
+          <li><b>QA Review:</b> Validate completeness and accuracy</li>
+          <li><b>Publish:</b> Distribute to web, print, help system, or distribution channels</li>
+        </ol>
+      </section>
+
+      <section>
+        <title>Publishing Command Examples</title>
+        <p>Using DITA Open Toolkit command line:</p>
+        <codeblock>
+# Generate Administrator PDF
+dita -i auditx-admin-guide.ditamap -f pdf \
+  -Dargs.input.dir=/auditx-dita \
+  -Dargs.rellinks=none \
+  -o /output/auditx-admin-manual.pdf
+
+# Generate Supervisor HTML
+dita -i auditx-supervisor-guide.ditamap -f html5 \
+  -Dargs.input.dir=/auditx-dita \
+  -o /output/supervisor-guide
+
+# Generate Operator Quick Start (filtered)
+dita -i auditx-operator-guide.ditamap -f pdf \
+  -Dargs.filter=operator-filters.ditaval \
+  -o /output/operator-quick-ref.pdf
+        </codeblock>
+      </section>
+
+    </section>
+
+    <section>
+      <title>Content Reusability Examples</title>
+      
+      <section>
+        <title>Example 1: Product Overview Reuse</title>
+        <p>The "Product Overview" concept appears in three different maps:</p>
+        <ul>
+          <li><b>Master Map:</b> Canonical reference with all context</li>
+          <li><b>Admin Guide:</b> Full version included in Part 1: Introduction</li>
+          <li><b>Supervisor Guide:</b> Same topic included for supervisor understanding</li>
+          <li><b>Operator Guide:</b> Same topic included for operator orientation</li>
+        </ul>
+        <p>Benefit: When product capabilities change, update one topic and all guides automatically reflect the change.</p>
+      </section>
+
+      <section>
+        <title>Example 2: Workflow Overview Reuse</title>
+        <p>The "Workflows Overview" concept is included in multiple contexts:</p>
+        <ul>
+          <li><b>Admin Guide:</b> Full version as Part 3: Configuring Workflows</li>
+          <li><b>Supervisor Guide:</b> Included as read-only reference</li>
+          <li><b>Operator Guide:</b> Simplified version for operator understanding</li>
+        </ul>
+        <p>Benefit: Single topic maintains consistency across all guides while filtering may be used to show/hide implementation details.</p>
+      </section>
+
+      <section>
+        <title>Example 3: Password Reset Task</title>
+        <p>The "Reset Password" task appears in all four maps:</p>
+        <ul>
+          <li><b>Master Map:</b> Foundational task</li>
+          <li><b>Admin Guide:</b> Part 1: Getting Started</li>
+          <li><b>Supervisor Guide:</b> Part 1: Welcome section</li>
+          <li><b>Operator Guide:</b> Part 1: Welcome section</li>
+        </ul>
+        <p>Benefit: One source serves all audiences; no duplicate documentation to maintain.</p>
+      </section>
+
+    </section>
+
+    <section>
+      <title>Metadata and Data Attributes</title>
+      
+      <section>
+        <title>Available Data Attributes</title>
+        <p>Beyond audience, DITA allows other metadata to organize content:</p>
+        <ul>
+          <li><codeph>&lt;data name="order" value="1"/&gt;</codeph> - Sequence in workflow</li>
+          <li><codeph>&lt;data name="workflow-type" value="order-verification"/&gt;</codeph> - Workflow classification</li>
+          <li><codeph>&lt;data name="feature" value="reporting"/&gt;</codeph> - Feature area classification</li>
+          <li><codeph>&lt;data name="difficulty" value="advanced"/&gt;</codeph> - Skill level required</li>
+        </ul>
+      </section>
+
+      <section>
+        <title>Prodinfo Section</title>
+        <p>Product information in maps identifies the documentation version:</p>
+        <codeblock>
+&lt;prodinfo&gt;
+  &lt;prodname&gt;AuditX&lt;/prodname&gt;
+  &lt;vrmlist&gt;
+    &lt;vrm version="1.0"/&gt;
+  &lt;/vrmlist&gt;
+&lt;/prodinfo&gt;
+        </codeblock>
+      </section>
+
+    </section>
+
+    <section>
+      <title>Version Control and Maintenance</title>
+      
+      <section>
+        <title>Source Control Integration</title>
+        <p>DITA files should be maintained in a version control system (Git, Subversion, etc.):</p>
+        <ul>
+          <li>Track all changes to topics and maps</li>
+          <li>Maintain version history for audit purposes</li>
+          <li>Support collaboration among multiple writers</li>
+          <li>Enable rollback to previous versions if needed</li>
+        </ul>
+      </section>
+
+      <section>
+        <title>Update Process</title>
+        <p>When AuditX features change:</p>
+        <ol>
+          <li>Identify affected topics (e.g., workflow configuration topics)</li>
+          <li>Update source topics with new information</li>
+          <li>Review related topics for consistency</li>
+          <li>Commit changes to version control</li>
+          <li>Regenerate all affected output deliverables</li>
+          <li>QA test all channels (PDF, HTML, Help system)</li>
+          <li>Publish updates to distribution channels</li>
+        </ol>
+      </section>
+
+    </section>
+
+    <section>
+      <title>Best Practices for DITA Authoring</title>
+      <ul>
+        <li><b>Keep Topics Focused:</b> Each topic should address one main topic/task</li>
+        <li><b>Use Consistent Structure:</b> Follow DITA topic type patterns</li>
+        <li><b>Apply Metadata Correctly:</b> Use profiling attributes to control visibility</li>
+        <li><b>Cross-Reference Carefully:</b> Link related topics for navigation</li>
+        <li><b>Avoid Duplication:</b> Reuse topics instead of copying content</li>
+        <li><b>Test Output:</b> Verify all publishing channels generate correctly</li>
+        <li><b>Validate XML:</b> Ensure DITA XML is well-formed and valid</li>
+        <li><b>Version Control:</b> Commit changes regularly with meaningful messages</li>
+      </ul>
+    </section>
+
+  </body>
+</topic>

@@ -1,0 +1,356 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE task PUBLIC "-//OASIS//DTD DITA Task//EN" "task.dtd">
+<task id="auditx_create_order_verification_workflow">
+  <title>Create an Order Verification Workflow</title>
+  <shortdesc>The Order Verification Workflow automatically validates scanned items against order specifications from Shopify or other eCommerce platforms. This workflow ensures accuracy and creates an audit trail of verified orders before shipment.</shortdesc>
+  
+  <taskbody>
+    <prereq>
+      <ul>
+        <li>You must have Admin or Custom User role</li>
+        <li>You must be logged into AuditX Forge</li>
+        <li>At least one site must be created and assigned to a system</li>
+        <li>Event URL Report feature must be enabled in Settings</li>
+        <li>If using Shopify integration: Shopify store name and API access key</li>
+        <li>For webhook integration: Webhook must be pre-configured</li>
+      </ul>
+    </prereq>
+
+    <context>
+      <p>The Order Verification Workflow is designed for eCommerce fulfillment operations. It links video evidence directly to order verification data, creating a complete record of what was packed and validated against the order.</p>
+      <note type="important">Before creating this workflow, ensure Event URL Report is enabled in Settings. See "Enable Event URL Reports" for instructions.</note>
+    </context>
+
+    <steps>
+      <step>
+        <cmd>Navigate to the "Workflows" menu in the left-hand navigation of AuditX Forge</cmd>
+      </step>
+
+      <step>
+        <cmd>Click the "Add Workflow" button on the right side of the screen</cmd>
+        <info>The workflow creation form will load.</info>
+      </step>
+
+      <step>
+        <cmd>Complete the basic workflow information</cmd>
+        <substeps>
+          <substep>
+            <cmd>Enter a descriptive name for your workflow</cmd>
+            <info>
+              <ul>
+                <li>Example: "Shopify Order Verification - Main Warehouse"</li>
+                <li>Example: "Ecommerce Order Validation - Zone A"</li>
+              </ul>
+            </info>
+          </substep>
+          <substep>
+            <cmd>Select the site where this workflow will operate</cmd>
+            <info>Choose from your list of previously created sites.</info>
+          </substep>
+          <substep>
+            <cmd>Optionally add a description of the workflow's purpose</cmd>
+          </substep>
+        </substeps>
+      </step>
+
+      <step>
+        <cmd>Select "Order Verification" from the "Use Case" dropdown menu</cmd>
+        <info>This identifies the workflow type and determines available configuration options.</info>
+      </step>
+
+      <step>
+        <cmd>Choose the platform for integration (Shopify, WMS, or Custom)</cmd>
+        <info>
+          <ul>
+            <li><b>Shopify:</b> Direct integration with Shopify orders</li>
+            <li><b>WMS:</b> Integration with Warehouse Management System</li>
+            <li><b>Custom:</b> Custom order database or manual order entry</li>
+          </ul>
+        </info>
+      </step>
+
+      <step>
+        <cmd>Configure barcode command settings (Optional)</cmd>
+        <info>
+          <p>Barcode Commands allow operators to control recording start/stop and capture using predefined barcodes:</p>
+          <ul>
+            <li>Scan &lt;&lt;stop&gt;&gt; barcode to end recording</li>
+            <li>Scan &lt;&lt;capture&gt;&gt; barcode to take a snapshot</li>
+          </ul>
+          <note type="tip">Enable this only if your operation uses special control barcodes. Most operations can skip this step.</note>
+        </info>
+      </step>
+
+      <step>
+        <cmd>Click "Next" to proceed to Additional Settings</cmd>
+      </step>
+
+      <step>
+        <cmd>Configure Barcode Field settings</cmd>
+        <substeps>
+          <substep>
+            <cmd>Enter the "Barcode Field Name"</cmd>
+            <info>
+              <ul>
+                <li>This represents the type of barcode being scanned</li>
+                <li>Examples: "Item Code", "SKU", "Product ID", "Order ID"</li>
+              </ul>
+            </info>
+          </substep>
+          <substep>
+            <cmd>Set the "Barcode Length Range"</cmd>
+            <info>
+              <ul>
+                <li>Use the Min slider to set minimum barcode length</li>
+                <li>Use the Max slider to set maximum barcode length</li>
+                <li>This helps reject invalid or incomplete scans</li>
+              </ul>
+            </info>
+          </substep>
+          <substep>
+            <cmd>Enable "Suppress Control Characters" if needed</cmd>
+            <info>This removes invisible ASCII characters that some barcode scanners add to scans, preventing scanning errors.</info>
+          </substep>
+        </substeps>
+      </step>
+
+      <step>
+        <cmd>Configure Barcode Classification (Optional)</cmd>
+        <info>
+          <p>Group barcodes into custom categories using regular expressions:</p>
+          <ul>
+            <li>Click "Add RegEx" to create a new classification rule</li>
+            <li>Enter a regular expression pattern (e.g., ^[0-9]{12}$ for 12-digit codes)</li>
+            <li>Enter a Classification Name (e.g., "Standard EAN")</li>
+            <li>Click Save to add the rule</li>
+          </ul>
+        </info>
+      </step>
+
+      <step>
+        <cmd>Select compression technique for video</cmd>
+        <info>
+          <ul>
+            <li><b>Standard:</b> Broader compatibility with most video players</li>
+            <li><b>Advanced:</b> Higher compression, smaller file sizes, requires modern codec support</li>
+          </ul>
+        </info>
+      </step>
+
+      <step>
+        <cmd>Configure Shopify integration (if using Shopify)</cmd>
+        <substeps>
+          <substep>
+            <cmd>Enter your Shopify store name</cmd>
+            <info>Example: "mystore" (from mystore.myshopify.com)</info>
+          </substep>
+          <substep>
+            <cmd>Enter your Shopify API access key</cmd>
+            <info>Obtain this from your Shopify Admin dashboard under Apps and Integrations.</info>
+          </substep>
+        </substeps>
+      </step>
+
+      <step>
+        <cmd>Click on the "Event Configuration" section to expand it</cmd>
+      </step>
+
+      <step>
+        <cmd>Configure Static Event Information (annotations that appear on video)</cmd>
+        <info>
+          <p>Select which metadata should be displayed on the recorded video:</p>
+          <ul>
+            <li><b>Event ID:</b> Unique identifier for each event</li>
+            <li><b>Barcode ID:</b> The actual scanned barcode value</li>
+            <li><b>Timestamp:</b> Date and time of recording</li>
+            <li><b>System Name:</b> Name of the AuditX device that recorded</li>
+          </ul>
+          <note type="tip">Select at least Event ID and Timestamp for traceability.</note>
+        </info>
+      </step>
+
+      <step>
+        <cmd>Configure Dynamic Annotations (Optional)</cmd>
+        <info>
+          <p>Choose whether to show:</p>
+          <ul>
+            <li><b>Sub-Event Markers:</b> Visual indicators showing where individual SKUs were scanned during video</li>
+            <li><b>Weight Data:</b> Display of package weight at relevant moments in video</li>
+          </ul>
+          <p>If enabled, select annotation size (Small, Medium, or Large).</p>
+        </info>
+      </step>
+
+      <step>
+        <cmd>Configure Sub-Event Image Capture (Optional)</cmd>
+        <info>
+          <p>This captures still images for each barcode scan during packing:</p>
+          <ul>
+            <li>Check "Capture Image" to enable automatic snapshot at each scan</li>
+            <li>Check "Annotate Image" to add metadata to captured images</li>
+          </ul>
+        </info>
+      </step>
+
+      <step>
+        <cmd>Configure Camera Settings</cmd>
+        <substeps>
+          <substep>
+            <cmd>Set "Max Event Duration"</cmd>
+            <info>
+              <ul>
+                <li>Choose 3 minutes or 5 minutes maximum per video session</li>
+                <li>Events longer than this will be segmented into multiple recordings</li>
+              </ul>
+            </info>
+          </substep>
+          <substep>
+            <cmd>Select "Capturing Resolution"</cmd>
+            <info>
+              <ul>
+                <li><b>4K:</b> Highest quality, larger file size</li>
+                <li><b>1080p (Full HD):</b> Standard quality, smaller file size</li>
+              </ul>
+            </info>
+          </substep>
+        </substeps>
+      </step>
+
+      <step>
+        <cmd>Configure Credit Exhaust Settings</cmd>
+        <info>
+          <p>Define what happens when your AuditX credit balance is depleted:</p>
+          <ul>
+            <li><b>Stop Progress:</b> Halt all recording immediately</li>
+            <li><b>Overwrite:</b> Continue recording by replacing oldest events first (FIFO)</li>
+          </ul>
+        </info>
+      </step>
+
+      <step>
+        <cmd>Review all workflow settings for accuracy</cmd>
+        <info>Scroll through the form to verify all configurations are correct.</info>
+      </step>
+
+      <step>
+        <cmd>Click the "Save" button to create the workflow</cmd>
+        <info>The system will validate all settings and save the workflow.</info>
+      </step>
+    </steps>
+
+    <result>
+      <p>Your Order Verification Workflow has been successfully created and is now active. The workflow is ready to process orders and validate scanned items against your order database.</p>
+    </result>
+
+    <postreq>
+      <ul>
+        <li>Assign the workflow to a Config Group (see "Create Config Groups")</li>
+        <li>Assign the Config Group to an AuditX device (see "Assign Config Group to System")</li>
+        <li>Test the workflow with a sample order to verify operation</li>
+        <li>If using Shopify integration, verify orders appear in the system</li>
+        <li>Monitor reports to confirm events are being recorded correctly</li>
+      </ul>
+    </postreq>
+
+    <example>
+      <title>Complete Workflow Configuration Example</title>
+    </example>
+      <section>
+        <title>Basic Information</title>
+        <simpletable>
+          <sthead>
+            <stentry>Field</stentry>
+            <stentry>Value</stentry>
+          </sthead>
+          <strow>
+            <stentry>Workflow Name</stentry>
+            <stentry>Shopify Order Verification - Main Warehouse</stentry>
+          </strow>
+          <strow>
+            <stentry>Site</stentry>
+            <stentry>NY Warehouse Zone A</stentry>
+          </strow>
+          <strow>
+            <stentry>Use Case</stentry>
+            <stentry>Order Verification</stentry>
+          </strow>
+          <strow>
+            <stentry>Platform</stentry>
+            <stentry>Shopify</stentry>
+          </strow>
+        </simpletable>
+      </section>
+
+      <section>
+        <title>Barcode Configuration</title>
+        <simpletable>
+          <sthead>
+            <stentry>Field</stentry>
+            <stentry>Value</stentry>
+          </sthead>
+          <strow>
+            <stentry>Barcode Field Name</stentry>
+            <stentry>SKU</stentry>
+          </strow>
+          <strow>
+            <stentry>Min Barcode Length</stentry>
+            <stentry>8 characters</stentry>
+          </strow>
+          <strow>
+            <stentry>Max Barcode Length</stentry>
+            <stentry>20 characters</stentry>
+          </strow>
+          <strow>
+            <stentry>Suppress Control Characters</stentry>
+            <stentry>Enabled</stentry>
+          </strow>
+        </simpletable>
+      </section>
+
+      <section>
+        <title>Camera Settings</title>
+        <simpletable>
+          <sthead>
+            <stentry>Setting</stentry>
+            <stentry>Value</stentry>
+          </sthead>
+          <strow>
+            <stentry>Max Event Duration</stentry>
+            <stentry>5 minutes</stentry>
+          </strow>
+          <strow>
+            <stentry>Resolution</stentry>
+            <stentry>1080p (Full HD)</stentry>
+          </strow>
+          <strow>
+            <stentry>Compression</stentry>
+            <stentry>Standard</stentry>
+          </strow>
+        </simpletable>
+      </section>
+    
+
+    <section id="troubleshoot_order_verification">
+      <title>Order Verification Workflow Troubleshooting</title>
+      <dl>
+        <dlentry>
+          <dt>Shopify orders not appearing in system</dt>
+          <dd>Verify your Shopify store name and API key are correct. Check that Event URL Report is enabled. Allow 5-10 minutes for initial sync.</dd>
+        </dlentry>
+        <dlentry>
+          <dt>Barcodes not being recognized</dt>
+          <dd>Check barcode length range settings. Verify scanner is not adding extra characters. Enable "Suppress Control Characters" if needed.</dd>
+        </dlentry>
+        <dlentry>
+          <dt>Video quality is poor</dt>
+          <dd>Check network connection quality. Try lowering resolution to 1080p if 4K fails. Verify camera lens is clean.</dd>
+        </dlentry>
+        <dlentry>
+          <dt>Events not being recorded</dt>
+          <dd>Verify workflow is assigned to a Config Group. Confirm Config Group is assigned to the system. Check system status is "Active".</dd>
+        </dlentry>
+      </dl>
+    </section>
+
+  </taskbody>
+</task>

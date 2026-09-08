@@ -1,0 +1,165 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE map PUBLIC "-//OASIS//DTD DITA Map//EN" "map.dtd">
+<map id="auditx_admin_guide">
+  <title>AuditX Administrator Guide</title>
+  <shortdesc>Complete guide for system administrators responsible for setting up, configuring, and managing AuditX deployments. Includes system initialization, user management, workflow configuration, and reporting.</shortdesc>
+
+  <topicmeta>
+    <prodinfo>
+      <prodname>AuditX</prodname>
+      <vrmlist>
+        <vrm version="1.0"/>
+      </vrmlist>
+    </prodinfo>
+    <audience type="administrator"/>
+  </topicmeta>
+
+  <frontmatter>
+    <booklists>
+      <toc/>
+      <figurelist/>
+      <tablelist/>
+    </booklists>
+  </frontmatter>
+
+  <!-- PART 1: INTRODUCTION AND OVERVIEW -->
+  <topicgroup>
+    <title>Getting Started as Administrator</title>
+
+    <topicref href="auditx-product-overview.dita" type="concept"/>
+
+    <topicref href="auditx-user-roles.dita" type="reference">
+      <topicmeta>
+        <audience type="administrator"/>
+      </topicmeta>
+    </topicref>
+
+    <topicref href="auditx-reset-password.dita" type="task"/>
+
+  </topicgroup>
+
+  <!-- PART 2: SYSTEM SETUP -->
+  <topicgroup>
+    <title>System Initialization and Setup</title>
+    <topicmeta>
+      <audience type="administrator"/>
+    </topicmeta>
+
+    <topicref href="auditx-create-site.dita" type="task">
+      <topicmeta>
+        <data name="order" value="1"/>
+      </topicmeta>
+    </topicref>
+
+    <topicref href="auditx-create-users.dita" type="task">
+      <topicmeta>
+        <data name="order" value="2"/>
+      </topicmeta>
+    </topicref>
+
+    <!-- Placeholder: Assign User to Site -->
+    <!-- <topicref href="auditx-assign-user-to-site.dita" type="task">
+      <topicmeta>
+        <data name="order" value="3"/>
+      </topicmeta>
+    </topicref> -->
+
+    <!-- Placeholder: Assign Site to System -->
+    <!-- <topicref href="auditx-assign-site-to-system.dita" type="task">
+      <topicmeta>
+        <data name="order" value="4"/>
+      </topicmeta>
+    </topicref> -->
+
+  </topicgroup>
+
+  <!-- PART 3: WORKFLOW CONFIGURATION -->
+  <topicgroup>
+    <title>Configuring Workflows</title>
+    <topicmeta>
+      <audience type="administrator"/>
+    </topicmeta>
+
+    <topicref href="auditx-workflows-overview.dita" type="concept"/>
+
+    <topicref href="auditx-create-order-verification-workflow.dita" type="task">
+      <topicmeta>
+        <data name="workflow-type" value="order-verification"/>
+      </topicmeta>
+    </topicref>
+
+    <!-- Placeholder: Video Recording Workflow -->
+    <!-- <topicref href="auditx-create-video-recording-workflow.dita" type="task">
+      <topicmeta>
+        <data name="workflow-type" value="video-recording"/>
+      </topicmeta>
+    </topicref> -->
+
+    <!-- Placeholder: Image Logging Workflow -->
+    <!-- <topicref href="auditx-create-image-logging-workflow.dita" type="task">
+      <topicmeta>
+        <data name="workflow-type" value="image-logging"/>
+      </topicmeta>
+    </topicref> -->
+
+  </topicgroup>
+
+  <!-- PART 4: ADVANCED CONFIGURATION -->
+  <topicgroup>
+    <title>Advanced Configuration</title>
+    <topicmeta>
+      <audience type="administrator"/>
+    </topicmeta>
+
+    <!-- Placeholder: Webhooks -->
+    <!-- <topicref href="auditx-configure-webhooks.dita" type="task">
+      <topicmeta>
+        <data name="feature" value="integration"/>
+      </topicmeta>
+    </topicref> -->
+
+    <!-- Placeholder: Config Groups -->
+    <!-- <topicref href="auditx-create-config-groups.dita" type="task">
+      <topicmeta>
+        <data name="feature" value="deployment"/>
+      </topicmeta>
+    </topicref> -->
+
+    <!-- Placeholder: ROI Configuration -->
+    <!-- <topicref href="auditx-configure-roi.dita" type="task">
+      <topicmeta>
+        <data name="feature" value="camera"/>
+      </topicmeta>
+    </topicref> -->
+
+  </topicgroup>
+
+  <!-- PART 5: MONITORING AND REPORTING -->
+  <topicgroup>
+    <title>Monitoring, Reporting, and Maintenance</title>
+    <topicmeta>
+      <audience type="administrator"/>
+    </topicmeta>
+
+    <topicref href="auditx-reports-reference.dita" type="reference">
+      <topicmeta>
+        <data name="feature" value="reporting"/>
+      </topicmeta>
+    </topicref>
+
+    <!-- Placeholder: Activity Logs -->
+    <!-- <topicref href="auditx-activity-logs.dita" type="reference">
+      <topicmeta>
+        <data name="feature" value="audit"/>
+      </topicmeta>
+    </topicref> -->
+
+  </topicgroup>
+
+  <!-- BACK MATTER -->
+  <backmatter>
+    <topicref href="auditx-glossary.dita" type="reference" processing-role="resource-only"/>
+    <topicref href="auditx-troubleshooting.dita" type="reference"/>
+  </backmatter>
+
+</map>

@@ -1,0 +1,271 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE reference PUBLIC "-//OASIS//DTD DITA Reference//EN" "reference.dtd">
+<reference id="auditx_glossary">
+  <title>AuditX Glossary of Terms</title>
+  <shortdesc>Definitions of key terms and concepts used throughout the AuditX system and documentation.</shortdesc>
+  
+  <refbody>
+    <section>
+      <title>Core AuditX Terms</title>
+      
+      <dl>
+        <dlentry>
+          <dt>AuditX</dt>
+          <dd>A comprehensive order verification and visual documentation platform designed for eCommerce and logistics operations. Combines barcode scanning, video/image capture, and integration with order management systems.</dd>
+        </dlentry>
+
+        <dlentry>
+          <dt>Forge</dt>
+          <dd>The web-based administrative portal for AuditX. Administrators use Forge to configure workflows, manage users, access reports, and control system settings.</dd>
+        </dlentry>
+
+        <dlentry>
+          <dt>AuditX Device</dt>
+          <dd>The hardware component of AuditX that captures video and images at packing stations. Examples include AHD-100 series. Devices connect to barcodes scanners and cameras.</dd>
+        </dlentry>
+
+        <dlentry>
+          <dt>Site</dt>
+          <dd>A physical location (warehouse, fulfillment center, distribution center) where AuditX devices are deployed. Each site has its own configuration, users, and event data.</dd>
+        </dlentry>
+
+      </dl>
+    </section>
+
+    <section>
+      <title>Workflow Terms</title>
+      
+      <dl>
+        <dlentry>
+          <dt>Workflow</dt>
+          <dd>A predefined configuration that governs how AuditX captures, records, and verifies packing operations. Three workflow types: Order Verification, Video Recording, and Image Logging.</dd>
+        </dlentry>
+
+        <dlentry>
+          <dt>Order Verification Workflow</dt>
+          <dd>Workflow type that validates each scanned item against order specifications from Shopify or other eCommerce platforms. Records video linked to verification data.</dd>
+        </dlentry>
+
+        <dlentry>
+          <dt>Video Recording Workflow</dt>
+          <dd>Workflow type that captures the complete packing process as continuous video linked to order or barcode IDs.</dd>
+        </dlentry>
+
+        <dlentry>
+          <dt>Image Logging Workflow</dt>
+          <dd>Workflow type that captures high-resolution still images at scan points during packing, creating a quick verification record with minimal storage requirements.</dd>
+        </dlentry>
+
+        <dlentry>
+          <dt>Event</dt>
+          <dd>A single recording session captured by an AuditX device. Events contain video, images, metadata, and are linked to one or more barcode scans.</dd>
+        </dlentry>
+
+        <dlentry>
+          <dt>Sub-Event</dt>
+          <dd>Individual actions or scans that occur within a main event. Examples: individual SKU scans during a multi-item order packing session. Sub-events can be captured as images or marked in video.</dd>
+        </dlentry>
+
+      </dl>
+    </section>
+
+    <section>
+      <title>Barcode and Scan Terms</title>
+      
+      <dl>
+        <dlentry>
+          <dt>Barcode</dt>
+          <dd>A machine-readable code (typically numeric or alphanumeric) that identifies products, orders, or items. Scanned during packing to trigger event recording and verification.</dd>
+        </dlentry>
+
+        <dlentry>
+          <dt>Barcode Field</dt>
+          <dd>A named attribute in AuditX that represents the type of barcode being scanned. Examples: SKU, Order ID, Product ID, Item Code.</dd>
+        </dlentry>
+
+        <dlentry>
+          <dt>Barcode Classification</dt>
+          <dd>A rule using regular expressions that groups barcodes into categories based on their format. Useful for distinguishing different barcode types in mixed-SKU operations.</dd>
+        </dlentry>
+
+        <dlentry>
+          <dt>Barcode Command</dt>
+          <dd>Optional feature that allows operators to control recording using special barcodes. Examples: &lt;&lt;stop&gt;&gt; barcode to end recording, &lt;&lt;capture&gt;&gt; barcode to take snapshot.</dd>
+        </dlentry>
+
+        <dlentry>
+          <dt>Control Characters</dt>
+          <dd>Invisible ASCII codes sometimes added by barcode scanners to barcode data. Can cause scanning errors if not suppressed.</dd>
+        </dlentry>
+
+      </dl>
+    </section>
+
+    <section>
+      <title>User and Access Terms</title>
+      
+      <dl>
+        <dlentry>
+          <dt>Admin User</dt>
+          <dd>Role with full system access. Admins create users, configure workflows, manage sites, and access all reports and system settings.</dd>
+        </dlentry>
+
+        <dlentry>
+          <dt>Custom User</dt>
+          <dd>Sub-admin role with most capabilities of Admin but with restrictions on user creation, device access, and system configuration.</dd>
+        </dlentry>
+
+        <dlentry>
+          <dt>Supervisor</dt>
+          <dd>Role with read-only access to dashboards and reports. Supervisors monitor operations but cannot modify configurations.</dd>
+        </dlentry>
+
+        <dlentry>
+          <dt>Operator</dt>
+          <dd>Role with access to device touchscreen only for performing packing activities. Operators cannot access Forge portal or modify settings.</dd>
+        </dlentry>
+
+        <dlentry>
+          <dt>Role-Based Access Control (RBAC)</dt>
+          <dd>System of assigning permissions to users based on their role. AuditX implements RBAC to ensure users access only features appropriate for their responsibilities.</dd>
+        </dlentry>
+
+      </dl>
+    </section>
+
+    <section>
+      <title>Video and Media Terms</title>
+      
+      <dl>
+        <dlentry>
+          <dt>Event Duration</dt>
+          <dd>The length of a recorded event in minutes. Max event duration can be configured (typically 3 or 5 minutes). Longer recordings are segmented into multiple events.</dd>
+        </dlentry>
+
+        <dlentry>
+          <dt>Resolution</dt>
+          <dd>The quality of recorded video. AuditX supports 4K (Ultra HD) for highest quality and 1080p (Full HD) for standard quality with smaller file size.</dd>
+        </dlentry>
+
+        <dlentry>
+          <dt>Compression</dt>
+          <dd>Technique for reducing video file size. AuditX offers Standard compression (broader compatibility) and Advanced compression (higher compression ratios).</dd>
+        </dlentry>
+
+        <dlentry>
+          <dt>Static Annotation</dt>
+          <dd>Metadata displayed on video or images that remains constant (e.g., Event ID, Barcode, Timestamp, System Name). Overlaid on all frames of recording.</dd>
+        </dlentry>
+
+        <dlentry>
+          <dt>Dynamic Annotation</dt>
+          <dd>Metadata that changes during video playback to show real-time information (e.g., sub-event markers showing individual SKU scans, weight data at specific moments).</dd>
+        </dlentry>
+
+        <dlentry>
+          <dt>Annotation Size</dt>
+          <dd>The visual size of overlaid metadata on video. Options: Small, Medium, or Large. Larger sizes may obscure more of the video content.</dd>
+        </dlentry>
+
+      </dl>
+    </section>
+
+    <section>
+      <title>Integration and Reporting Terms</title>
+      
+      <dl>
+        <dlentry>
+          <dt>Webhook</dt>
+          <dd>An automated mechanism to send event data from AuditX to external systems (Shopify, WMS, custom APIs). Enables real-time data synchronization.</dd>
+        </dlentry>
+
+        <dlentry>
+          <dt>Config Group</dt>
+          <dd>A preset package combining workflows, webhooks, and settings into one assignable unit. Config Groups can be deployed to multiple devices simultaneously.</dd>
+        </dlentry>
+
+        <dlentry>
+          <dt>Report</dt>
+          <dd>Searchable, filterable record of all recorded events. Reports show barcode, event ID, timestamp, video/images, duration, and webhook status.</dd>
+        </dlentry>
+
+        <dlentry>
+          <dt>Event URL Report</dt>
+          <dd>Feature that generates shareable URLs for each event recording. URLs allow viewing videos/images without logging into AuditX.</dd>
+        </dlentry>
+
+        <dlentry>
+          <dt>CSV Export</dt>
+          <dd>Comma-separated values file format for exporting report data. Can be opened in spreadsheet applications for analysis and compliance documentation.</dd>
+        </dlentry>
+
+      </dl>
+    </section>
+
+    <section>
+      <title>Technical Terms</title>
+      
+      <dl>
+        <dlentry>
+          <dt>API Key</dt>
+          <dd>Authentication credential used to connect AuditX with external systems like Shopify or custom applications.</dd>
+        </dlentry>
+
+        <dlentry>
+          <dt>Regular Expression (RegEx)</dt>
+          <dd>Pattern matching syntax used to define barcode classification rules. Example: ^[0-9]{12}$ matches any 12-digit number.</dd>
+        </dlentry>
+
+        <dlentry>
+          <dt>Timestamp</dt>
+          <dd>Precise date and time (YYYY-MM-DD HH:MM:SS) automatically recorded for each event. Used for audit trails and event sequencing.</dd>
+        </dlentry>
+
+        <dlentry>
+          <dt>Credit</dt>
+          <dd>Billing unit in AuditX representing recording capacity. Video and image events consume credits. Account runs out of credits when balance reaches zero.</dd>
+        </dlentry>
+
+        <dlentry>
+          <dt>Credit Exhaust</dt>
+          <dd>Situation where an AuditX account has consumed all available credits. System can either stop recording or overwrite older events based on configuration.</dd>
+        </dlentry>
+
+        <dlentry>
+          <dt>ROI (Region of Interest)</dt>
+          <dd>The specific area of the camera's view that will be recorded. Setting ROI excludes irrelevant areas and optimizes storage use.</dd>
+        </dlentry>
+
+      </dl>
+    </section>
+
+    <section>
+      <title>Shopify-Specific Terms</title>
+      
+      <dl>
+        <dlentry>
+          <dt>Shopify</dt>
+          <dd>Leading eCommerce platform. AuditX integrates with Shopify to access order data for verification workflows.</dd>
+        </dlentry>
+
+        <dlentry>
+          <dt>Shopify Store Name</dt>
+          <dd>The unique identifier of your Shopify store (e.g., "mystore" from mystore.myshopify.com). Required for Shopify integration setup.</dd>
+        </dlentry>
+
+        <dlentry>
+          <dt>Shopify API Access Key</dt>
+          <dd>Authentication credential issued by Shopify that allows AuditX to access your store's order data. Generated in Shopify Admin dashboard.</dd>
+        </dlentry>
+
+        <dlentry>
+          <dt>Order ID</dt>
+          <dd>Unique identifier (ID) assigned by Shopify to each customer order. Linked to
+            video/image events in AuditX for complete order tracking.</dd>
+        </dlentry>
+
+      </dl>
+    </section>
+
+  </refbody>
+</reference>

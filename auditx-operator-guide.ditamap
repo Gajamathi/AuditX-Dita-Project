@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE map PUBLIC "-//OASIS//DTD DITA Map//EN" "map.dtd">
+<map id="auditx_operator_guide">
+  <title>AuditX Operator Quick Start Guide</title>
+  <shortdesc>Quick reference guide for packing operators who use AuditX devices on the production floor. Operators interact with the device touchscreen to record packing activities and verify orders.</shortdesc>
+
+  <topicmeta>
+    <prodinfo>
+      <prodname>AuditX</prodname>
+      <vrmlist>
+        <vrm version="1.0"/>
+      </vrmlist>
+    </prodinfo>
+    <audience type="operator"/>
+  </topicmeta>
+
+  <frontmatter>
+    <booklists>
+      <toc/>
+    </booklists>
+  </frontmatter>
+
+  <!-- PART 1: INTRODUCTION -->
+  <topicgroup>
+    <title>Welcome Operator</title>
+
+    <topicref href="auditx-product-overview.dita" type="concept">
+      <topicmeta>
+        <audience type="operator"/>
+      </topicmeta>
+    </topicref>
+
+    <topicref href="auditx-reset-password.dita" type="task">
+      <topicmeta>
+        <audience type="operator"/>
+      </topicmeta>
+    </topicref>
+
+  </topicgroup>
+
+  <!-- PART 2: YOUR ROLE -->
+  <topicgroup>
+    <title>Understanding Your Role</title>
+
+    <topicref href="auditx-user-roles.dita" type="reference">
+      <topicmeta>
+        <audience type="operator"/>
+      </topicmeta>
+    </topicref>
+
+  </topicgroup>
+
+  <!-- PART 3: QUICK START -->
+  <topicgroup>
+    <title>Using the AuditX Device</title>
+    <topicmeta>
+      <audience type="operator"/>
+    </topicmeta>
+
+    <topicref href="auditx-workflows-overview.dita" type="concept">
+      <topicmeta>
+        <audience type="operator"/>
+      </topicmeta>
+    </topicref>
+
+    <!-- Placeholder: Operator quick tasks -->
+    <!-- <topicref href="auditx-operator-start-recording.dita" type="task">
+      <topicmeta>
+        <audience type="operator"/>
+      </topicmeta>
+    </topicref> -->
+
+    <!-- <topicref href="auditx-operator-scan-barcode.dita" type="task">
+      <topicmeta>
+        <audience type="operator"/>
+      </topicmeta>
+    </topicref> -->
+
+    <!-- <topicref href="auditx-operator-end-event.dita" type="task">
+      <topicmeta>
+        <audience type="operator"/>
+      </topicmeta>
+    </topicref> -->
+
+  </topicgroup>
+
+  <!-- BACK MATTER -->
+  <backmatter>
+    <topicref href="auditx-glossary.dita" type="reference" processing-role="resource-only"/>
+  </backmatter>
+
+</map>
